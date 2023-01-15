@@ -9,11 +9,7 @@ Unique  Name :- Kids Shop - kids fashion
 ---
 Project logo : -
 
-![App Screenshot](https://imgur.com/a/I6jnaSP.png)
-
-
-
-![App Screenshot](https://imgur.com/m1uHPGm.png)
+![App Screenshot](https://imgur.com/S0J7Z8d.png)
 
 ---
 Team Members:-
