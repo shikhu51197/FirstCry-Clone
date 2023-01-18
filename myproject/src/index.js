@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
-import { ChakraProvider } from '@chakra-ui/react';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.js";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import { Provider } from "react-redux";
+import store from "./Redux/store";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-  <ChakraProvider>
-    <App />
-  </ChakraProvider>
+    <ChakraProvider>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </ChakraProvider>
   </BrowserRouter>
 );
 
