@@ -1,10 +1,12 @@
 
 import './App.css';
-
+import FristNav from './Navbar/FristNav';
+import Catbar from './Navbar/Catbar';
 function App() {
   return (
     <div className="App">
-      <h1>First Cry</h1>
+        <FristNav/>
+    <Catbar/>
     </div>
   );
 }
