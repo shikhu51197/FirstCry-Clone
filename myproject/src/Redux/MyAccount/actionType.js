@@ -1,2 +1,3 @@
-export const GET_USERS = "GETS_USERS";
+export const GET_CHILD_USERS = "GET_CHILD_USERS";
 export const DELETE_USER_CHILD = "DELETE_USER_CHILD";
+export const GET_ADDRESS_USERS = "GET_ADDRESS_USERS";

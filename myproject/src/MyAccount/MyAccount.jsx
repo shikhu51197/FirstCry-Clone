@@ -4,8 +4,8 @@ import { deleteUser, loadUsers } from "../Redux/MyAccount/action";
 
 const MyAccount = () => {
   let dispatch = useDispatch();
-  const users = useSelector((state) => state.users || {});
-  console.log("user", users);
+  const UserData = useSelector((state) => state.myProfileData.UserData);
+  console.log("UserData", UserData);
   const [userChild, setUserChild] = useState({
     childName: "",
     childDob: "",
@@ -46,8 +46,8 @@ const MyAccount = () => {
             </div>
             <div className="col-md-9 col-12">
               <h3 className="fw-bold account-sub-head">My Profile</h3>
-              {users &&
-                users.map((user) => (
+              {UserData &&
+                UserData.map((user) => (
                   <div className="card profile-card-shadow mt-3" key={user.id}>
                     <div className="p-4">
                       <div className="row">
@@ -286,10 +286,13 @@ const MyAccount = () => {
                             <div className="col-4"></div>
                           </div>
                         ) : (
-                          <div>
+                          <div className="">
                             {user.child.map((item) => {
                               return (
-                                <div className="row">
+                                <div
+                                  className="row mb-2 border border-warning p-2 m-2"
+                                  key={user.id}
+                                >
                                   <div className="col-8">
                                     <b>{item.name}</b>
                                     <div className="mb-2 row">
@@ -363,169 +366,201 @@ const MyAccount = () => {
                           Add an address for delivery in your address book and
                           make checkout faster
                         </div>
-                        <div className="row">
-                          <div className="col-8">
-                            <div className="mb-3 row">
-                              <label
-                                htmlFor="AdressnameField"
-                                className="col-sm-4 col-form-label"
-                              >
-                                Name
-                              </label>
-                              <div className="col-sm-8">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  id="AdressnameField"
-                                  placeholder="Name"
-                                />
+                        {user.address.length == 0 ? (
+                          <div className="row">
+                            <div className="col-8">
+                              <div className="mb-3 row">
+                                <label
+                                  htmlFor="AdressnameField"
+                                  className="col-sm-4 col-form-label"
+                                >
+                                  Name
+                                </label>
+                                <div className="col-sm-8">
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    id="AdressnameField"
+                                    placeholder="Name"
+                                  />
+                                </div>
+                              </div>
+                              <div className="mb-3 row">
+                                <label
+                                  htmlFor="FlatField"
+                                  className="col-sm-4 col-form-label"
+                                >
+                                  Flat/House No./ Building :
+                                </label>
+                                <div className="col-sm-8">
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    id="FlatField"
+                                    placeholder="Flat/House No./ Building"
+                                  />
+                                </div>
+                              </div>
+                              <div className="mb-3 row">
+                                <label
+                                  htmlFor="StreetField"
+                                  className="col-sm-4 col-form-label"
+                                >
+                                  Street Address / Colony :
+                                </label>
+                                <div className="col-sm-8">
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    id="StreetField"
+                                    placeholder="Street Address / Colony"
+                                  />
+                                </div>
+                              </div>
+                              <div className="mb-3 row">
+                                <label
+                                  htmlFor="LandMarkField"
+                                  className="col-sm-4 col-form-label"
+                                >
+                                  Landmark (Optional):
+                                </label>
+                                <div className="col-sm-8">
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    id="LandMarkField"
+                                    placeholder="Landmark"
+                                  />
+                                </div>
+                              </div>
+                              <div className="mb-3 row">
+                                <label
+                                  htmlFor="PincodeField"
+                                  className="col-sm-4 col-form-label"
+                                >
+                                  PinCode
+                                </label>
+                                <div className="col-sm-8">
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    id="PincodeField"
+                                    placeholder="PinCode"
+                                  />
+                                </div>
+                              </div>
+                              <div className="mb-3 row">
+                                <label
+                                  htmlFor="CityField"
+                                  className="col-sm-4 col-form-label"
+                                >
+                                  City:
+                                </label>
+                                <div className="col-sm-8">
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    id="CityField"
+                                    placeholder="City Name"
+                                  />
+                                </div>
+                              </div>
+                              <div className="mb-3 row">
+                                <label
+                                  htmlFor="StateField"
+                                  className="col-sm-4 col-form-label"
+                                >
+                                  State:
+                                </label>
+                                <div className="col-sm-8">
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    id="StateField"
+                                    placeholder="State Name"
+                                  />
+                                </div>
+                              </div>
+                              <div className="mb-3 row">
+                                <label
+                                  htmlFor="CountryField"
+                                  className="col-sm-4 col-form-label"
+                                >
+                                  Country:
+                                </label>
+                                <div className="col-sm-8">
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    id="CountryField"
+                                    placeholder="Country Name"
+                                  />
+                                </div>
+                              </div>
+                              <div className="mb-3 row">
+                                <label
+                                  htmlFor="MobileField"
+                                  className="col-sm-4 col-form-label"
+                                >
+                                  Mobile:
+                                </label>
+                                <div className="col-sm-8">
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    id="MobileField"
+                                    placeholder="Mobile Number"
+                                  />
+                                </div>
+                              </div>
+                              <div className="text-center">
+                                <button className="btn btn-warning btn-md pl-2 pr-2">
+                                  SAVE
+                                </button>
+                                <button className="btn btn-secondary btn-md pl-2 pr-2 mx-2">
+                                  CANCEL
+                                </button>
                               </div>
                             </div>
-                            <div className="mb-3 row">
-                              <label
-                                htmlFor="FlatField"
-                                className="col-sm-4 col-form-label"
-                              >
-                                Flat/House No./ Building :
-                              </label>
-                              <div className="col-sm-8">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  id="FlatField"
-                                  placeholder="Flat/House No./ Building"
-                                />
-                              </div>
-                            </div>
-                            <div className="mb-3 row">
-                              <label
-                                htmlFor="StreetField"
-                                className="col-sm-4 col-form-label"
-                              >
-                                Street Address / Colony :
-                              </label>
-                              <div className="col-sm-8">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  id="StreetField"
-                                  placeholder="Street Address / Colony"
-                                />
-                              </div>
-                            </div>
-                            <div className="mb-3 row">
-                              <label
-                                htmlFor="LandMarkField"
-                                className="col-sm-4 col-form-label"
-                              >
-                                Landmark (Optional):
-                              </label>
-                              <div className="col-sm-8">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  id="LandMarkField"
-                                  placeholder="Landmark"
-                                />
-                              </div>
-                            </div>
-                            <div className="mb-3 row">
-                              <label
-                                htmlFor="PincodeField"
-                                className="col-sm-4 col-form-label"
-                              >
-                                PinCode
-                              </label>
-                              <div className="col-sm-8">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  id="PincodeField"
-                                  placeholder="PinCode"
-                                />
-                              </div>
-                            </div>
-                            <div className="mb-3 row">
-                              <label
-                                htmlFor="CityField"
-                                className="col-sm-4 col-form-label"
-                              >
-                                City:
-                              </label>
-                              <div className="col-sm-8">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  id="CityField"
-                                  placeholder="City Name"
-                                />
-                              </div>
-                            </div>
-                            <div className="mb-3 row">
-                              <label
-                                htmlFor="StateField"
-                                className="col-sm-4 col-form-label"
-                              >
-                                State:
-                              </label>
-                              <div className="col-sm-8">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  id="StateField"
-                                  placeholder="State Name"
-                                />
-                              </div>
-                            </div>
-                            <div className="mb-3 row">
-                              <label
-                                htmlFor="CountryField"
-                                className="col-sm-4 col-form-label"
-                              >
-                                Country:
-                              </label>
-                              <div className="col-sm-8">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  id="CountryField"
-                                  placeholder="Country Name"
-                                />
-                              </div>
-                            </div>
-                            <div className="mb-3 row">
-                              <label
-                                htmlFor="MobileField"
-                                className="col-sm-4 col-form-label"
-                              >
-                                Mobile:
-                              </label>
-                              <div className="col-sm-8">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  id="MobileField"
-                                  placeholder="Mobile Number"
-                                />
-                              </div>
-                            </div>
-                            <div className="text-center">
-                              <button className="btn btn-warning btn-md pl-2 pr-2">
-                                SAVE
-                              </button>
-                              <button className="btn btn-secondary btn-md pl-2 pr-2 mx-2">
-                                CANCEL
-                              </button>
-                            </div>
+                            <div className="col-4"></div>
                           </div>
-                          <div className="col-4"></div>
-                        </div>
+                        ) : (
+                          <>
+                            <div key={user.id}>
+                              <h2 className="fw-bold mb-2">My Saved Address</h2>
+                              <div className="row">
+                                {user.address.map((add) => {
+                                  return (
+                                    <div className="col-5 border border-warning p-2 m-2">
+                                      <p>Name: {add.name}</p>
+                                      <p>{add.flat}</p>
+                                      <span>
+                                        {add.street} {add.Landmark}
+                                      </span>
+                                      <p>Pin:{add.pincode}</p>
+                                      <p>City:{add.city}</p>
+                                      <p>91+{add.mobile}</p>
+                                      <span className="mt-3">
+                                        {" "}
+                                        <i className="bi bi-pencil-square"></i>
+                                      </span>
+                                      <span>
+                                        {" "}
+                                        <i className="bi bi-trash"></i>
+                                      </span>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          </>
+                        )}
                       </div>
                     </div>
                     <div className="">
                       <div className="card-header">
                         <div className="row">
-                          <div className="col-10">Child Details</div>
+                          <div className="col-10">Change Password</div>
                           <div className="col-2 text-end"></div>
                         </div>
                       </div>
