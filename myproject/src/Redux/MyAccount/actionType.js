@@ -1,1 +1,2 @@
 export const GET_USERS = "GETS_USERS";
+export const DELETE_USER_CHILD = "DELETE_USER_CHILD";
