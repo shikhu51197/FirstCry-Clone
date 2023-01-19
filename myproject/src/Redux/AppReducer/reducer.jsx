@@ -37,4 +37,4 @@ const Reducer = (state=initialData,action) => {
   
 }
 
-export default Reducer
+export  {Reducer}

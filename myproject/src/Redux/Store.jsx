@@ -10,6 +10,5 @@ const rootReducer = combineReducers({ AppReducer, Authentication ,MyAccount});
 // const composeEnhancers = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_||compose;
 
 
-const store=legacy_createStore(rootReducer,applyMiddleware(thunk))
+export const Store=legacy_createStore(rootReducer,applyMiddleware(thunk))
 
-export default store

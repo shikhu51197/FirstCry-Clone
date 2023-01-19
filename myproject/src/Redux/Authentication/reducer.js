@@ -10,7 +10,7 @@ import {
     isError: false,
   };
   
-  export const reducer = (state = initalState, { type }) => {
+  const Reducer = (state = initalState, { type }) => {
     switch (type) {
       case USER_LOGIN_REQUEST:
         return { ...state, isLoading: true };
@@ -22,4 +22,4 @@ import {
         return state;
     }
   };
-  
+  export  {Reducer}

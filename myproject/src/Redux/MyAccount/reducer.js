@@ -6,7 +6,7 @@ const initialState = {
   loading: true,
 };
 
-const UserAccountReducer = (state = initialState, action) => {
+const Reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.GET_USERS:
       return {
@@ -24,4 +24,4 @@ const UserAccountReducer = (state = initialState, action) => {
   }
 };
 
-export default UserAccountReducer;
+export { Reducer};

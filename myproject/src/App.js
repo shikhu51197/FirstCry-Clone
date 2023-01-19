@@ -1,29 +1,19 @@
 
 import './App.css';
+import FristNav from './Navbar/FristNav';
+import Catbar from './Navbar/Catbar';
+import Cart from './Components/Cart';
 import Login from './Registration/Login';
 function App() {
   return (
     <div className="App">
-      <h1>First Cry</h1>
-      <Login />
-
-import FristNav from './Navbar/FristNav';
-import Catbar from './Navbar/Catbar';
-function App() {
-  return (
-    <div className="App">
-        <FristNav/>
+    <h1> My App</h1>
+       <FristNav/>
     <Catbar/>
-
-import Cart from './Components/Cart';
-
-function App() {
-  return (
-    <div className="App">
-         <Cart/>
-
-    </div>
-  );
+      <Login />
+  <Cart/>
+  </div>
+)
 }
 
 export default App;
