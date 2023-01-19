@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteUser, loadUsers } from "../../Redux/MyAccount/action";
+import { deleteUser, loadUsers } from "../Redux/MyAccount/action";
 
 const MyAccount = () => {
   let dispatch = useDispatch();
@@ -324,8 +324,12 @@ const MyAccount = () => {
                                     </div>
                                   </div>
                                   <div className="col-4">
-                                    <img src={item.imageurl} alt={item.name} />
-                                    <span>
+                                    <img
+                                      src={item.imageUrl}
+                                      alt={item.name}
+                                      style={{ height: "120px" }}
+                                    />
+                                    <span className="mt-3">
                                       {" "}
                                       <i className="bi bi-pencil-square"></i>
                                     </span>
