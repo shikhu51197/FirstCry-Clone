@@ -1,0 +1,49 @@
+.allcontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-height: 50px;
+    padding: 10px 0px;
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+.leftsidecontnav{
+    display: flex;
+    flex-direction: row;
+ 
+}
+.rightsidecontnav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+.rightsidecontnav > p {
+    margin-right: 10px;
+    font-size: 12px;
+}
+.RC{
+    display:  flex;
+}
+
+@media screen and (max-width:768px) {
+    .rightsidecontnav{
+     display: none;
+      
+    }
+    .RC{
+        display: none;  
+    }
+} 
+    @media screen and (max-width:480px) {
+        .rightsidecontnav{
+         display: none;
+          
+        }
+        .RC{
+            display: none;  
+        }
+   
+   
+  }
