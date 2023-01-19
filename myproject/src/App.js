@@ -1,5 +1,11 @@
 
 import './App.css';
+import Login from './Registration/Login';
+function App() {
+  return (
+    <div className="App">
+      <h1>First Cry</h1>
+      <Login />
 
 import FristNav from './Navbar/FristNav';
 import Catbar from './Navbar/Catbar';
