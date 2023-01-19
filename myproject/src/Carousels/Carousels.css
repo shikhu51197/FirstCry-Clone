@@ -1,0 +1,43 @@
+.carousel-indicators{
+    display: none;
+}
+.carousel-inner{
+    height: 500px;
+}
+.carousel-control-next{
+    background-color: rgb(171, 194, 247);
+    height: 15%;
+    margin-top: 170px;
+    width: 60px;
+    border-radius: 400px;
+}
+.carousel-control-prev{
+    background-color:  rgb(171, 194, 247);
+    height: 15%;
+    margin-top: 170px;
+    width: 60px;
+    border-radius: 400px;
+}
+.carousel-control-next-icon{
+    color: black;
+}
+.carousal{
+    height: 450px;
+width: 70%;
+margin: center;
+/* border: 2px solid black; */
+display: flex;
+justify-content: center;
+align-items: center;
+margin: auto;
+}
+.carousal1{
+    height: 450px;
+    width: 100%;
+    margin: center;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    }
