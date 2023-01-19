@@ -126,7 +126,7 @@ import {
         bg={useColorModeValue('white')}>
         <Stack marginTop={"-30px"} spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
          <Image cursor={"pointer"} src={logo} width="100px" height="100px" margin="auto" onClick={()=>navigate("/")}/>
-         <Text textAlign={"left"} fontStyle={"italic"} fontWeight={"bold"}>Register here></Text>
+         <Text textAlign={"left"} fontStyle={"italic"} fontWeight={"bold"}>Register here</Text>
           <Box
             rounded={'lg'}
             bg={useColorModeValue('white')}

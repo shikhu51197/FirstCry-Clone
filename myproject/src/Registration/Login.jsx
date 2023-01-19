@@ -53,7 +53,7 @@ import { login } from '../Redux/Authentication/action';
         bg={useColorModeValue('white')}>
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
          <Image cursor={"pointer"} src={logo} width="100px" height="100px" margin="auto" marginTop={"-250px"} onClick={()=>navigate("/")} />
-         <Text textAlign={"left"} fontStyle={"italic"} fontWeight={"bold"}>Login here></Text>
+         <Text textAlign={"left"} fontStyle={"italic"} fontWeight={"bold"}>Login here</Text>
           <Box
             rounded={'lg'}
             bg={useColorModeValue('white')}
