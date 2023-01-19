@@ -20,7 +20,7 @@
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
     "web-vitals": "^2.1.4",
-    "sweetalert": "^2.1.2",
+    "sweetalert": "^2.1.2"
   },
   "scripts": {
     "server": "json-server --watch db.json --port 8080",
