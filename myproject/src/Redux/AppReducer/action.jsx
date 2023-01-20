@@ -20,9 +20,9 @@ export const getProductsSuccess = (payload) => {
     }
   }
 
-  export const getData=(dispatch)=>{
+  export const getData=(params=null)=>(dispatch)=>{
     dispatch(getProductsRequest())
-      axios.get("https://burgundy-cow-kit.cyclic.app/MenKids").then((r) => {
+      axios.get("https://burgundy-cow-kit.cyclic.app/MenKids",{params:{'q':params}}).then((r) => {
         dispatch(getProductsSuccess(r.data));
       })
       .catch((e) => {
