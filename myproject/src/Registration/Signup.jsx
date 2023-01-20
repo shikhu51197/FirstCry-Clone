@@ -18,7 +18,7 @@ import {
   import { useContext, useRef, useState } from 'react';
   import {useNavigate} from "react-router-dom";
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-  import logo from "../assest/Kids shop logo crop.png"
+  import logo from "../assest/Kids fashion logo.png"
   export default function Signup() {
     const [showPassword, setShowPassword] = useState(false);
     const [isLoading,setisLoading]=useState(false);

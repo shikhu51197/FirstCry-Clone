@@ -18,7 +18,7 @@ import { useState } from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import { useNavigate} from "react-router-dom";
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import logo from "../assest/Kids shop logo crop.png"
+import logo from "../assest/Kids fashion logo.png"
 import { login } from '../Redux/Authentication/action';
 
 export default function Login() {
