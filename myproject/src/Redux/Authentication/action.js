@@ -15,6 +15,7 @@ import { useToast } from "@chakra-ui/react";
     return { type: USER_LOGIN_SUCCESS };
   };
   
+  
   export const loginFailureAction = () => {
     return { type: USER_LOGIN_FAILURE };
   };
@@ -29,7 +30,7 @@ import { useToast } from "@chakra-ui/react";
         checkdata(res.data,email)
         if(details==null){
           toast({
-            title: `Emal does not exist`,
+            title: `Email does not exist`,
             status: 'error',
             isClosable: true,
           })

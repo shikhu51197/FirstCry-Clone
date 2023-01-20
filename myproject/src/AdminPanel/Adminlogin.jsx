@@ -32,12 +32,12 @@ const Form1 = () => {
   const [firstname, SetFirstname] = React.useState("");
   const [lastname, SetLastname] = React.useState("");
   const [adminemail, setAdminEmail] = React.useState("");
-  const [adminpass, setAdminpass] = React.useState("");
+  const [adminpassword, setadminpassword] = React.useState("");
  const [show, setShow] = React.useState(false);
 
-  const validatePassword=(adminpass)=>{
-    let x=adminpass.includes('!')||adminpass.includes('@')||adminpass.includes('#')||adminpass.includes('&')||adminpass.includes('$');
-    let p=adminpass;
+  const validatePassword=(adminpassword)=>{
+    let x=adminpassword.includes('!')||adminpassword.includes('@')||adminpassword.includes('#')||adminpassword.includes('&')||adminpassword.includes('$');
+    let p=adminpassword;
     if(p==""){
       toast({
         title: `password is Empty`,
@@ -68,11 +68,11 @@ const Form1 = () => {
   const handleClick = () => setShow(!show);
 
   const handleSubmit = async() => {
-    const isValidated = validatefirstname(firstname)&& validatelastname(lastname)&& validateemail(adminemail)&&validatePassword(adminpass)
+    const isValidated = validatefirstname(firstname)&& validatelastname(lastname)&& validateemail(adminemail)&&validatePassword(adminpassword)
      setLoading(true)
 
      if(isValidated){
-      let postdata ={firstname , lastname, adminemail, adminpass}
+      let postdata ={firstname , lastname, adminemail, adminpassword}
       let res = await fetch('https://burgundy-cow-kit.cyclic.app/Admin');
       let userdata = await res.json();
       let result = false 
@@ -100,7 +100,7 @@ const Form1 = () => {
         isClosable: true,
       });
       SetFirstname("")
-      setAdminpass("")
+      setadminpassword("")
       setAdminEmail("")
       SetLastname("")
      }else{
@@ -185,9 +185,9 @@ const Form1 = () => {
             pr="4.5rem"
             type={show ? "text" : "password"}
             placeholder="Enter password"
-            value={adminpass}
+            value={adminpassword}
             onChange={(e) => {
-              setAdminpass(e.target.value);
+              setadminpassword(e.target.value);
             }}
           />
           <InputRightElement width="4.5rem">
@@ -236,7 +236,7 @@ const Form2 = () => {
    // const navigate = useNavigate();
   const toast = useToast();
   const [adminemail, setAdminEmail] = React.useState("");
-  const [adminpass, setAdminpass] = React.useState("");
+  const [adminpassword, setadminpassword] = React.useState("");
  const [show, setShow] = React.useState(false);
 
 
@@ -244,14 +244,13 @@ const Form2 = () => {
 
 
   const dispatch=useDispatch();
-  let Loading = useSelector((store) =>store.Loading)
+  let isLoading = useSelector((store) =>store.AdminAuthReducer.isLoading)
 
   const handleSubmit = async () => {
     console.log('Submit')
-    let adminemail=adminemail
-    dispatch(loginadmin(adminemail,adminpass,toast, setAdminpass ,setAdminEmail ));
-    
-   
+    let userAdmin=adminemail
+    dispatch(loginadmin(userAdmin,adminpassword,toast, setadminpassword ,setAdminEmail ));
+    // navigate("/admindeshboard")
   }
   
 
@@ -281,9 +280,9 @@ const Form2 = () => {
           <Input
             pr="4.5rem"
             type={show ? "text" : "password"}
-            placeholder="Enter password"  value={adminpass}
+            placeholder="Enter password"  value={adminpassword}
             onChange={(e) => {
-              setAdminpass(e.target.value);
+              setadminpassword(e.target.value);
             }}
            
           />
@@ -297,8 +296,17 @@ const Form2 = () => {
 
 
         <Box mt={5} align="center">
-        
-
+        {isLoading?
+          <Button
+          isLoading
+                loadingText="submitting"
+            w="7rem"
+            colorScheme="red"
+            variant="solid"
+            onClick={handleSubmit}
+          >
+            Save 
+          </Button>:
           <Button
             w="7rem"
             colorScheme="red"
@@ -307,7 +315,7 @@ const Form2 = () => {
           >
             Save 
           </Button>
-
+}
         </Box>
       </FormControl>
     </>
@@ -397,23 +405,7 @@ function Adminlogin() {
             <AlertDialogFooter>
 
 
-            {step === 2 ? (
-              <Button
-                w="7rem"
-                colorScheme="red"
-                variant="solid"
-                onClick={() => {
-                  toast({
-                    title: 'Success!',
-                    description: "Admin Access Allowed.",
-                    status: 'success',
-                    duration: 3000,
-                    isClosable: true,
-                  });
-                }}>
-                Submit
-              </Button>
-            ) : null}
+            
            
               <Button
                 onClick={() => onClose()}
