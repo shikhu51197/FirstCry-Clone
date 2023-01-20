@@ -16,10 +16,10 @@ function FristNav() {
         <div style={{width:"100%",border:"1px solid blue",bg:"#ffffff"}} className="allcontainer">
             <div className='leftsidecontnav'>
                 <img  src="https://cdn.fcglcdn.com/brainbees/images/n/fc_logo.png" alt="img"/></div>
-                <div style={{marginLeft:"20px"}} className="RC">  <Input  display="flex" ref={searchRef} variant='outline' size="sm" placeholder='Search Category'/><Icon fontSize="20px"  ml={-7} mt={2}>
+                <div style={{marginLeft:"20px"}} className="RC">  
+                <Input  display="flex" ref={searchRef} variant='outline' size="sm" placeholder='Search Category'/><Icon fontSize="20px"  ml={-7} mt={2}>
                 <CiSearch/>
                 </Icon>
-              
                </div>
          
             <div className='rightsidecontnav'>
