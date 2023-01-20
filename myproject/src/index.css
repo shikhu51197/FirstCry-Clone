@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.col-form-label {
+  color: #999;
+  font-size: 12px;
+}
+.font-desc {
+  color: #999;
+  font-size: 14px;
+}
+.font-alert {
+  font-size: 13px;
+}
+.myaccount-bg {
+  background: #f5f5f5;
+}
+.profile-card-shadow {
+  box-shadow: 0 0 2px rgb(0 0 0 / 10%);
+}
+.account-card-shadow {
+  box-shadow: 2px 2px 0 0 rgb(0 0 0 / 10%);
+  background-color: #fff;
+}
+.account-head {
+  font-size: 20px;
+}
+.account-sub-head {
+  font-size: 18px;
+}

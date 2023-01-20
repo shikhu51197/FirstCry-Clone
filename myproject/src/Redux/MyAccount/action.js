@@ -13,7 +13,7 @@ const userDeleted = () => ({
 export const loadUsers = () => {
   return function (dispatch) {
     axios
-      .get("http://localhost:8080/UserDetails")
+      .get("https://burgundy-cow-kit.cyclic.app/UserDetails")
       .then((res) => {
         console.log("res", res.data);
         dispatch(getUsers(res.data));
@@ -25,7 +25,7 @@ export const loadUsers = () => {
 export const deleteUser = (id) => {
   return function (dispatch) {
     axios
-      .delete(`http://localhost:8080/UserDetails/${id}`)
+      .delete(`https://burgundy-cow-kit.cyclic.app/UserDetails/${id}`)
       .then((res) => {
         console.log("res", res.data);
         dispatch(userDeleted());

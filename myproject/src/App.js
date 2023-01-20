@@ -1,32 +1,25 @@
+import "./App.css";
+import Adminlogin from './AdminPanel/Adminlogin';
+import FristNav from "./Navbar/FristNav";
+import Catbar from "./Navbar/Catbar";
 
-import './App.css';
-// import Adminlogin from './AdminPanel/Adminlogin';
-import FristNav from './Navbar/FristNav';
-import Catbar from './Navbar/Catbar';
 
-// import Cart from './Components/Cart';
-// import Login from './Registration/Login';
-
-import Cart from './Components/Cart';
-import Login from './Registration/Login';
-import Carousels from './Carousels/Carousels';
+import Cart from "./Components/Cart";
+import Login from "./Registration/Login";
+import Carousels from "./Carousels/Carousels";
+import MyAccount from './MyAccount/MyAccount';
 function App() {
   return (
     <div className="App">
-    <h1> My App</h1>
-    {/* <Adminlogin/> */}
-       <FristNav/>
-    <Catbar/>
-
-      {/* <Login />
-  <Cart/>  */}
-
-    <Carousels/>
+      <Adminlogin />
+      <FristNav />
+      <Catbar />
+      <Carousels />
       <Login />
-  <Cart/>
-
-  </div>
-)
+      <Cart />
+      <MyAccount/>
+    </div>
+  );
 }
 
 export default App;

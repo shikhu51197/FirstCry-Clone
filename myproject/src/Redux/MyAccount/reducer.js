@@ -11,7 +11,7 @@ const Reducer = (state = initialState, action) => {
     case types.GET_USERS:
       return {
         ...state,
-        users: action.payload,
+        UserData : action.payload,
         loading: false,
       };
     case types.DELETE_USER_CHILD:
