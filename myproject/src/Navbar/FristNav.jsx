@@ -14,7 +14,7 @@ function FristNav() {
 
     return (
      <>
-        <div style={{width:"100%",border:"1px solid blue",bg:"#ffffff"}} className="allcontainer">
+        <div style={{width:"100%",bg:"#ffffff"}} className="allcontainer">
             <div className='leftsidecontnav'>
 
                 <img className='logo1' src="Kids fashion logo.png" alt="img"/></div>
