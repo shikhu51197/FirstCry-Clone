@@ -12,11 +12,11 @@ const getProductsError = () => {
   return { type: types.GET_PRODUCTS_ERROR };
 };
 
-const getProducts = () => (dispatch) => {
+const getProducts = (params={}) =>(dispatch) => {
   console.log("invoked");
   dispatch(getProductsRequest);
   return axios
-    .get(`https://burgundy-cow-kit.cyclic.app/MenKids`)
+    .get(`https://burgundy-cow-kit.cyclic.app/MenKids`,params)
     .then((r) => {
       dispatch(getProductsSuccess(r.data));
     })
