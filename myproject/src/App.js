@@ -18,7 +18,7 @@ function App() {
       <Cart />
        <MyAccount/>  */}
           <Home/>
-      <Products />
+      {/* <Products /> */}
     </div>
   );
 }

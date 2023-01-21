@@ -113,6 +113,8 @@ margin: auto;
    .allimg3{
     /* border:4px solid peru; */
     display: flex;
+    /* display: grid;
+    grid-template-columns: repeat(1fr ,4); */
     justify-content: space-around;
 
   } 
@@ -123,7 +125,8 @@ margin: auto;
 
 /*  */
 .Winter{
-  margin-top: 30px;
+ margin-top: 17%;
+ /* border: 13px solid blue; */
 }
 
 
@@ -219,6 +222,10 @@ width: 45%;
   }
  .kid1{
   width: 35%;
+ }
+ .Winter{
+
+margin-bottom: -10px;
  }
 }
 
