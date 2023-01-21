@@ -28,7 +28,7 @@ function FristNav() {
                   <p>Stores & Preschools  |</p>
                   <p>Support | </p>
                   <p>Track Order | </p>
-                  <p>FirstCry Parenting | </p>
+                  <p>Admin | </p>
                  
                   <Icon className="IC" mt={1} fontSize="20px"><CiHeart/></Icon>
     <p  style={{cursor:"pointer"}}> shortList |</p>
