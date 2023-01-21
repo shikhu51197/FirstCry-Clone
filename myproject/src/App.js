@@ -8,16 +8,19 @@ import Cart from "./Components/Cart";
 import Login from "./Registration/Login";
 import Carousels from "./Carousels/Carousels";
 import MyAccount from './MyAccount/MyAccount';
+import Products from "./Product/Products";
+
 function App() {
   return (
     <div className="App">
-      <Adminlogin />
+      {/* <Adminlogin />
       <FristNav />
       <Catbar />
       <Carousels />
       <Login />
       <Cart />
-      <MyAccount/>
+       <MyAccount/>  */}
+      <Products />
     </div>
   );
 }
