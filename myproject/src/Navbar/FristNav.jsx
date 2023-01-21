@@ -16,16 +16,14 @@ function FristNav() {
      <>
         <div style={{width:"100%",border:"1px solid blue",bg:"#ffffff"}} className="allcontainer">
             <div className='leftsidecontnav'>
-<<<<<<< HEAD
+
                 <img className='logo1' src="Kids fashion logo.png" alt="img"/></div>
-                <div style={{marginLeft:"20px"}} className="RC">  <Input  display="flex" ref={searchRef} variant='outline' size="sm" placeholder='Search Category'/><Icon fontSize="20px"  ml={-7} mt={2}>
-                <CiSearch/>
-                </Icon>
-=======
-                <img  src="Kids fashion logo.png" alt="img"/></div>
-                <div style={{marginLeft:"20px"}} className="RC">  
+                <div style={{marginLeft:"20px"}} className="RC"> 
+
+             
+                
                 <Searchbar />
->>>>>>> ed57c4e570e7641937a053261ee4512d3823806a
+
               
                </div>
          
