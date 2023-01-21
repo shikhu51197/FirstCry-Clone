@@ -1,5 +1,5 @@
 import "./App.css";
-import Adminlogin from './AdminPanel/Adminlogin';
+import Admin from './AdminPanel/Admin';
 import FristNav from "./Navbar/FristNav";
 import Catbar from "./Navbar/Catbar";
 
@@ -11,7 +11,7 @@ import MyAccount from './MyAccount/MyAccount';
 function App() {
   return (
     <div className="App">
-      <Adminlogin />
+      {/* <Admin /> */}
       <FristNav />
       <Catbar />
       <Carousels />
