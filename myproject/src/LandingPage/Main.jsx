@@ -1,6 +1,9 @@
 import React from 'react'
 import "./Main.css"
+
 // import image1 from "../Images/img1.jpg"
+
+
 import { border } from '@chakra-ui/react'
 import { useRef } from "react";
 function Main() {
@@ -9,7 +12,7 @@ function Main() {
   return (
     <div className="bib">
     <div className="mainPage">
- <h2 style={{ marginBottom: "20px",marginTop:"20px",fontSize:"21px",fontWeight:"600" }}>PREMIUM BIOTIQUES</h2>
+ <h2 style={{ marginBottom: "20px",marginTop:"10px",fontSize:"21px",fontWeight:"600",textAlign:'center' }}>PREMIUM BIOTIQUES</h2>
 
  <div className="cardDiv">
     <a href="#">
@@ -157,10 +160,10 @@ function Main() {
       </div>
       <div className="catagoryCard">
         <div className="catagory">
-          <p>View All Biotiques</p>
+          <p style={{textAlign:'center'}}>View All Biotiques</p>
         </div>
         <div className="catagory">
-          <p>View All Premium Brands</p>
+          <p style={{textAlign:'center'}}>View All Premium Brands</p>
         </div>
       </div>
 

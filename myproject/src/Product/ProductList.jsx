@@ -11,6 +11,7 @@ import {
   Button,
   GridItem,
 } from "@chakra-ui/react";
+
 import { getProducts } from "../Redux/AppReducer/action";
 import { useDispatch } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
@@ -24,6 +25,10 @@ const ProductList = ({ products}) => {
   const [sort, setSortBy] = useState(initialSort[0]||"");
   // console.log("shivam",initialSort)
   const dispatch=useDispatch()
+
+import { Link } from "react-router-dom";
+const ProductList = ({ products }) => {
+
   console.log("products - - - > ", products);
   const [value,setValue]=useState("")
   const handlechage=(e)=>{
@@ -114,11 +119,14 @@ const ProductList = ({ products}) => {
         spacing="20px"
       >
         {   products&& products.length>0 && products.map((el) => (
-          <Box m="auto" key={el.id}>
+          <Box>
+          <Link to={`/singleproduct/${el.id}`}>
+          <Box m="auto"  >
             <Image w="300px" m="auto" src={el.image} alt="" />
             <Text fontWeight="bold">{el.name}</Text>
             <Text fontWeight="light">{el.category.split("_")}</Text>
             <Text>₹{el.price}</Text>
+
             <Button
               w="100%"
               _hover={{ bg: "#433333" }}
@@ -128,7 +136,12 @@ const ProductList = ({ products}) => {
             >
               Add To Cart
             </Button>
+
+           
+
             
+          </Box>
+          </Link>
           </Box>
         ))}
       </SimpleGrid>

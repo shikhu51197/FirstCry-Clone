@@ -18,9 +18,9 @@ export default function Searchbar() {
   const getdata=()=>{
        axios.get(`https://burgundy-cow-kit.cyclic.app/MenKids`)
     .then((res)=>setdata([...data,...res.data]))
-    axios.get(`https://burgundy-cow-kit.cyclic.app//GirlKids `)
+    axios.get(`https://burgundy-cow-kit.cyclic.app/GirlKids `)
     .then((res)=>setdata([...data,...res.data]))
-    axios.get(`https://burgundy-cow-kit.cyclic.app///Footwear  `)
+    axios.get(`https://burgundy-cow-kit.cyclic.app/Footwear  `)
     .then((res)=>setdata([...data,...res.data]))
   }
   useEffect(()=>{
@@ -34,7 +34,7 @@ export default function Searchbar() {
         let newsuggestions=data.filter((item)=>{
           return item.title.toLowerCase().indexOf(textquery)!==-1?true:false;
         }).map((item)=>item.title)
-        setsuggestions(newsuggestions.slice(0,5));
+        setsuggestions(newsuggestions.slice(0,7));
       }
   },[input])
   const [activeoption,setactiveoption]=useState(1);
@@ -79,7 +79,7 @@ export default function Searchbar() {
             <Searchbarwrapper>
               <Inputbox onBlur={() => setfocus(false)} onFocus={() => setfocus(true)} ref={ref} placeholder="search..." value={input} onChange={(e)=>setinput(e.target.value)} >
               </Inputbox>
-              <SearchIcon margin={"10px"} onClick={()=>{ setfocus(false);dispatch(getProducts({q:input}))}} color={"rgb(255,112,67)"} cursor={"pointer"} />
+              <SearchIcon margin={"10px"} onClick={()=>{ setfocus(false);dispatch(getProducts({q:input}))}} color={"rgb(255,112,67)"} ml={-7}cursor={"pointer"} />
             </Searchbarwrapper>
             <Suggestionbox limit={5} suggestionslength={suggestions.length} activeoption={activeoption} ref={scrolldiv} >            
             {focus&&suggestions.map((item,index)=>{
@@ -96,7 +96,7 @@ export default function Searchbar() {
 display:flex;
 align-items:center;
 justify-content:center;
-width:340px;
+width:300px;
 ` 
 const Inputbox=styled.input`
 flex:1;
@@ -114,6 +114,10 @@ font-size: 12px;
 width:300px;
 max-height: auto;
 overflow:auto;
+display: block;
+position:absolute;
+z-index:10;
+background:white;
 & * {
     padding:10px;
     text-align:left;
