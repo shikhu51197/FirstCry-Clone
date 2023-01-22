@@ -79,7 +79,7 @@ export default function Searchbar() {
             <Searchbarwrapper>
               <Inputbox onBlur={() => setfocus(false)} onFocus={() => setfocus(true)} ref={ref} placeholder="search..." value={input} onChange={(e)=>setinput(e.target.value)} >
               </Inputbox>
-              <SearchIcon margin={"10px"} onClick={()=>{ setfocus(false);dispatch(getProducts({q:input}))}} color={"black"} ml={-7}cursor={"pointer"} />
+              <SearchIcon margin={"10px"} onClick={()=>{ setfocus(false);dispatch(getProducts({q:input}))}} color={"rgb(255,112,67)"} ml={-7}cursor={"pointer"} />
             </Searchbarwrapper>
             <Suggestionbox limit={5} suggestionslength={suggestions.length} activeoption={activeoption} ref={scrolldiv} >            
             {focus&&suggestions.map((item,index)=>{
@@ -96,14 +96,14 @@ export default function Searchbar() {
 display:flex;
 align-items:center;
 justify-content:center;
-width:340px;
+width:300px;
 ` 
 const Inputbox=styled.input`
 flex:1;
 font-size:20px;
 padding:0px 5px;
 width:100%;
-border:1px solid black;
+border:1px solid rgb(255,112,67);
 `
 
 const Suggestionbox=styled.div`
