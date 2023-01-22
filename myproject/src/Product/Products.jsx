@@ -1,10 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link} from "react-router-dom";
 import axios from "axios";
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
+  
   BreadcrumbSeparator,
   Box,
   Divider,
@@ -18,12 +19,24 @@ import { useEffect } from "react";
 // Function Component Starts Here //
 
 const Products = () => {
+
   const products = useSelector((state) => state.AppReducer.products);
-  const dispatch = useDispatch();
+  
+
+  
+ 
+  
   console.log("this are products", products);
+  const [page, setPage] = useState(1);
+  const [order, setOrder] = useState("asc");
+  //console.log("page is ", page);
+  const dispatch = useDispatch();
+  //console.log("this are products", products);
   useEffect(() => {
-    dispatch(getProducts());
-  }, []);
+  
+
+    dispatch(getProducts(page, order));
+  }, [page, order]);
   return (
     <Box w="95%" m="auto">
       <h1>Products Page</h1>
@@ -55,7 +68,10 @@ const Products = () => {
           border="1px"
           borderColor="gray.200"
         >
-          <ProductList products={products} />
+          <ProductList products={products}
+          
+          
+          />
         </Box>
       </Box>
     </Box>

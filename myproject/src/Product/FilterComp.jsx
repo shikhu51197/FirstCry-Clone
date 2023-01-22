@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Text } from "@chakra-ui/react";
 const FilterComp = () => {
   return (
-    <Box border="1px" borderColor="gray.200" textAlign="left" lineHeight="10">
+    <Box ml="20px" lineHeight="10" mt="10px">
       <Text
         fontWeight="bold"
         fontSize="18"
