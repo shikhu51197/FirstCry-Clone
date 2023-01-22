@@ -35,7 +35,7 @@ import axios from "axios";
   const SingleProduct = () => {
     const { id } = useParams();
    
-  
+    const [flag,setflag]=useState(false)
     const products = useSelector((state) => state.AppReducer.products);
     const [currentProduct, setCurrentProduct] = useState({});
     const dispatch = useDispatch();
@@ -55,6 +55,7 @@ import axios from "axios";
     }, [id, products]);
   
     const handleClick = () => {
+      setflag(true);
       axios.get(`https://burgundy-cow-kit.cyclic.app/MenKids/${id}`)
       .then((res)=>{
         res=res.data
@@ -266,7 +267,7 @@ import axios from "axios";
                     </Box>
                   </Box>
                 </Box>
-                <Box
+                {flag==false&&<Box
                   onClick={()=>handleClick()}
                   h="50px"
                   w="30%"
@@ -277,7 +278,18 @@ import axios from "axios";
                   cursor="pointer"
                 >
                   <Text fontSize='20px' mt="10px" color="white">ADD TO CART</Text>
-                </Box>
+                </Box>}
+                {flag==true&&<Link><Box
+                  h="50px"
+                  w="30%"
+                  bg="orange"
+                  textAlign="center"
+                  border="1px solid #9C3"
+                  borderRadius={10}
+                  cursor="pointer"
+                >
+                  <Text fontSize='20px' mt="10px" color="white">Go TO CART</Text>
+                </Box></Link>}
               </Box>
               <Box mt="10px" justifyContent="space-between" pr={5} display="flex">
                 <Box>
