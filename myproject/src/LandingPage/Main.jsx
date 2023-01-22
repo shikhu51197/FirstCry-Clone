@@ -1,10 +1,6 @@
 import React from 'react'
 import "./Main.css"
-<<<<<<< HEAD
-// import image1 from "../Images/img1.jpg"
-=======
 
->>>>>>> 591c31f62f845982ef1561f6946b56e74c24b29e
 import { border } from '@chakra-ui/react'
 import { useRef } from "react";
 function Main() {
