@@ -27,6 +27,7 @@ import {
 import { useState } from "react";
 import { useRef } from "react";
 import { GoCreditCard } from "react-icons/go";
+// import { useNavigate, Link } from "react-router-dom";
 
 const Payment = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -42,6 +43,7 @@ const Payment = () => {
   const [password, setPassword] = useState("");
   const [register2, setRegister2] = useState("");
   const [password2, setPassword2] = useState("");
+  // const navigate = useNavigate();
   const toast = useToast()
   // const navigate = useNavigate();
   
@@ -56,7 +58,7 @@ const Payment = () => {
         isClosable: true,
       }) 
    
-      // navigate("/Otp")
+      // navigate("/otp")
 
   }
   return (
@@ -172,7 +174,7 @@ const Payment = () => {
                             </Box>
                           </Box>
                           <Box>
-                            <Button onClick={handleSubmit}>Pay Now </Button>
+                            <Button onClick={handleSubmit}>Save Details </Button>
                           </Box>
                         </Stack>
                       </Box>
@@ -205,7 +207,7 @@ const Payment = () => {
                             />
                           </Box>
                           <Box>
-                            <Button onClick={handleSubmit}>Pay Now </Button>
+                            <Button onClick={handleSubmit}>Save Details </Button>
                           </Box>
                         </Stack>
                       </Box>
@@ -232,7 +234,8 @@ const Payment = () => {
   </Radio>
                           </Box>
                           <Box>
-                            <Button onClick={handleSubmit}>Pay Now </Button>
+                            <Button onClick={handleSubmit}>Save Details </Button>
+                           
                           </Box>
                         </Stack>
                       </Box>
@@ -271,7 +274,7 @@ const Payment = () => {
                           />
                           </Box>
                         <Box>
-                              <Button onClick={handleSubmit}>Pay Now </Button>
+                              <Button onClick={handleSubmit}>Save Details </Button>
                             </Box>
                         </Stack>
                       </Box>
@@ -312,8 +315,10 @@ const Payment = () => {
 
 
                           <Box> 
-                            <Button onClick={handleSubmit}>Pay Now </Button>
-                          </Box>
+                            <Button onClick={handleSubmit}>Save Details</Button>
+                
+                          </Box> 
+                         
                         </Stack>
                       </Box>
                     </AccordionPanel>
@@ -331,7 +336,7 @@ const Payment = () => {
               {/* <Button variant="outline" w= "100%" mr={3} colorScheme="blue" >
                 NEXT
               </Button> */}
-             <Otp />
+             <Otp/>
 
             </DrawerFooter>
           </DrawerContent>
