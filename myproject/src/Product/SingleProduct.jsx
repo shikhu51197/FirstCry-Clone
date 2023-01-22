@@ -19,6 +19,7 @@ import {
     Stack,
     SimpleGrid,
     Container,
+    useToast,
   } from "@chakra-ui/react";
   import React from "react";
   import { useState } from "react";
@@ -30,15 +31,15 @@ import {
   import { useEffect } from "react";
 
 import { getProducts } from "../Redux/AppReducer/action";
+import axios from "axios";
   const SingleProduct = () => {
     const { id } = useParams();
    
   
     const products = useSelector((state) => state.AppReducer.products);
     const [currentProduct, setCurrentProduct] = useState({});
-  
     const dispatch = useDispatch();
-  
+    const toast=useToast();
     useEffect(() => {
       if (products.length === 0) {
         dispatch(getProducts());
@@ -54,7 +55,19 @@ import { getProducts } from "../Redux/AppReducer/action";
     }, [id, products]);
   
     const handleClick = () => {
-      alert("Item Added");
+      axios.get(`https://burgundy-cow-kit.cyclic.app/MenKids/${id}`)
+      .then((res)=>{
+        res=res.data
+        res={...res,"quantity":1}
+        console.log(res)
+        let LSdata=JSON.parse(localStorage.getItem("cartdata"))||[];
+        localStorage.setItem("cartdata",JSON.stringify([...LSdata,res]));
+        toast({
+          title: `Item added Successfully`,
+          status: 'success',
+          isClosable: true,
+        });
+      })
     };
   
     const arrowStyles = {
@@ -254,7 +267,7 @@ import { getProducts } from "../Redux/AppReducer/action";
                   </Box>
                 </Box>
                 <Box
-                  onClick={handleClick}
+                  onClick={()=>handleClick()}
                   h="50px"
                   w="30%"
                   bg="orange"

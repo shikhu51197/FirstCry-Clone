@@ -6,7 +6,7 @@ import Deshboard from "./../AdminPanel/Deshboard";
 import OrderManagement from "./../AdminPanel/OrderManagement";
 import Admin from "../AdminPanel/Admin";
 import Adminlogin from "../AdminPanel/Adminlogin";
-import Cart from "../Components/Cart";
+import Cart from "../Components/Cart/Cart";
 import Home from "../HomePage/Home";
 import MyAccountPages from "../MyAccountPages/MyAccountPages";
 import Products from "../Product/Products";
