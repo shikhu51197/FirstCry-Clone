@@ -1,8 +1,12 @@
-
-
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-
+import React from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import {
+ 
+  Box,Heading
+} from "@chakra-ui/react";
 
 const FilterComp = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -39,10 +43,10 @@ const FilterComp = () => {
   };
 
   return (
-    <div className="sidebar_container">
-      <h2>Sidebar</h2>
-      <h3>Filter By</h3>
-      <div>
+    <Box ml="8px">
+      
+      <Heading>Filter</Heading>
+      <Box mt="8px">
         <input
           checked={category.includes("T-shirts")}
           type="checkbox"
@@ -50,8 +54,8 @@ const FilterComp = () => {
           onChange={handlefilter}
         />
         <label>T-shirts</label>
-      </div>
-      <div>
+      </Box>
+      <Box mt="8px">
         <input
           checked={category.includes("Pajamas")}
           type="checkbox"
@@ -59,8 +63,8 @@ const FilterComp = () => {
           onChange={handlefilter}
         />
         <label>Pajamas</label>
-      </div>
-      <div>
+      </Box>
+      <Box mt="8px">
         <input
           checked={category.includes("Jeans")}
           type="checkbox"
@@ -68,8 +72,8 @@ const FilterComp = () => {
           onChange={handlefilter}
         />
         <label>Footwear</label>
-      </div>
-      <div>
+      </Box>
+      {/* <div>
         <input
           checked={category.includes("Footwear")}
           type="checkbox"
@@ -77,9 +81,9 @@ const FilterComp = () => {
           onChange={handlefilter}
         />
         <label>Footwear</label>
-      </div>
+      </div> */}
 
-      <h3>Sort By order</h3>
+      <Heading>Sorting</Heading>
       <div onChange={handlesort}>
         <input
           type="radio"
@@ -99,7 +103,7 @@ const FilterComp = () => {
         />
         <label>Descending order</label>
       </div>
-    </div>
+    </Box>
   );
 };
 
