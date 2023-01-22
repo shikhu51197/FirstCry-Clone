@@ -7,7 +7,6 @@ import {
     Stack,
     Collapse,
     Icon,
-    Link,
     Popover,
     PopoverTrigger,
     PopoverContent,
@@ -21,7 +20,8 @@ import {
     CloseIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
-  import logo from "../../assest/Kids fashion logo.png"
+  import logo from "../../assest/Kids fashion logo.png";
+  import {Link} from "react-router-dom";
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
   

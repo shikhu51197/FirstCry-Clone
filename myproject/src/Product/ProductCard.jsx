@@ -18,8 +18,10 @@ import axios from "axios";
 
 
 const ProductCard = ({ product }) => {
+  const [flag,setflag]=useState(false);
   const toast=useToast();
   const handleClick = (id) => {
+    setflag(true)
     axios.get(`https://burgundy-cow-kit.cyclic.app/MenKids/${id}`)
     .then((res)=>{
       res=res.data
@@ -44,7 +46,7 @@ const ProductCard = ({ product }) => {
       <Text fontWeight="light">{product.category.split("_")}</Text>
       <Text>₹{product.price}</Text>
 
-      <Button
+      {flag==false&&<Button
         w="100%"
         _hover={{ bg: "#433333" }}
         borderRadius="0"
@@ -53,7 +55,17 @@ const ProductCard = ({ product }) => {
         onClick={()=>handleClick(product.id)}
       >
         Add To Cart
+      </Button>}
+      {flag==true&&<Link to="/cart"><Button
+        w="100%"
+        _hover={{ bg: "#433333" }}
+        borderRadius="0"
+        bgColor="#333333"
+        color="white"
+      >
+        Go To Cart->
       </Button>
+      </Link>}
     </Box>
     </Box>
   );
