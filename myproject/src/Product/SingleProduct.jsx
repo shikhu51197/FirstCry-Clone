@@ -281,14 +281,14 @@ import axios from "axios";
                 </Box>}
                 {flag==true&&<Link><Box
                   h="50px"
-                  w="30%"
+                  w="150%"
                   bg="orange"
                   textAlign="center"
                   border="1px solid #9C3"
                   borderRadius={10}
                   cursor="pointer"
                 >
-                  <Text fontSize='20px' mt="10px" color="white">Go TO CART</Text>
+                  <Text fontSize='20px' mt="10px" color="white">Go TO CART-></Text>
                 </Box></Link>}
               </Box>
               <Box mt="10px" justifyContent="space-between" pr={5} display="flex">

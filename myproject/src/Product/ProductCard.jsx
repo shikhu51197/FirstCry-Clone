@@ -63,7 +63,7 @@ const ProductCard = ({ product }) => {
         bgColor="#333333"
         color="white"
       >
-        Go To Cart
+        Go To Cart->
       </Button>
       </Link>}
     </Box>
