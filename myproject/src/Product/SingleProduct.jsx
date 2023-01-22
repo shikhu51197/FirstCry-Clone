@@ -312,7 +312,7 @@ const SingleProduct = () => {
                 </Box>
               
               {flag == true && (
-                <Link>
+                <Link to="/cart">
                   <Box
                     h="50px"
                     w="150%"
@@ -323,7 +323,7 @@ const SingleProduct = () => {
                     cursor="pointer"
                   >
                     <Text fontSize="20px" mt="10px" color="white">
-                      Go TO CART
+                      GO TO CART
                     </Text>
                   </Box>
                 </Link>
