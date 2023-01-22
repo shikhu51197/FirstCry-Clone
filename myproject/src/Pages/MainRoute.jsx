@@ -14,6 +14,7 @@ import SingleProduct from "../Product/SingleProduct";
 import Login from "../Registration/Login";
 import Signup from "../Registration/Signup";
 import { PrivateRoute } from "../Pages/privateRoute";
+import Otp from "../Components/Otp";
 const MainRoute = () => {
   return (
     <div>
@@ -44,7 +45,7 @@ const MainRoute = () => {
         <Route path="/deshboard" element={<Deshboard />} />
         <Route path="/usermanagement" element={<UserManagement />} />
         <Route path="/ordermanagement" element={<OrderManagement />} />
-
+        <Route path="/otp" element={<Otp/>} />
         <Route />
         <Route />
       </Routes>

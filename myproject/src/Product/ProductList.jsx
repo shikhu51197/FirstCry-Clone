@@ -47,6 +47,7 @@ dispatch(getProducts(paramobj))
 
   return (
     <SimpleGrid 
+    
         w="95%"
         minChildWidth="220px"
         m="auto"
