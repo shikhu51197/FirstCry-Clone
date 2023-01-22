@@ -9,8 +9,8 @@ import Adminlogin from "../AdminPanel/Adminlogin";
 import Cart from "../Components/Cart/Cart";
 import Home from "../HomePage/Home";
 import MyAccountPages from "../MyAccountPages/MyAccountPages";
-import Products from "../Product/Products";
-import SingleProduct from "../Product/SingleProduct";
+import ProductPages from "../ProductPages/ProductPages";
+import SingleProductPage from "../SingleProductPage/SingleProductPage";
 import Login from "../Registration/Login";
 import Signup from "../Registration/Signup";
 import { PrivateRoute } from "../Pages/privateRoute";
@@ -30,7 +30,7 @@ const MainRoute = () => {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/singleproduct/:id" element={<SingleProduct />} />
+        <Route path="/singleproduct/:id" element={<SingleProductPage />} />
         <Route
           path="/account"
           element={
@@ -39,13 +39,13 @@ const MainRoute = () => {
             </PrivateRoute>
           }
         />
-        <Route path="/product" element={<Products />} />
-        <Route path="/adminlogin" element={<Adminlogin/>}/>
+        <Route path="/product" element={<ProductPages />} />
+        <Route path="/adminlogin" element={<Adminlogin />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/deshboard" element={<Deshboard />} />
         <Route path="/usermanagement" element={<UserManagement />} />
         <Route path="/ordermanagement" element={<OrderManagement />} />
-        <Route path="/otp" element={<Otp/>} />
+        <Route path="/otp" element={<Otp />} />
         <Route />
         <Route />
       </Routes>
