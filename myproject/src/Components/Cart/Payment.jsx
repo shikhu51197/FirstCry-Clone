@@ -173,7 +173,7 @@ const Payment = ({price}) => {
                             </Box>
                           </Box>
                           <Box>
-                            <Button onClick={handleSubmit}>Pay Now </Button>
+                            <Button onClick={handleSubmit}>Save Details </Button>
                           </Box>
                         </Stack>
                       </Box>
@@ -206,7 +206,7 @@ const Payment = ({price}) => {
                             />
                           </Box>
                           <Box>
-                            <Button onClick={handleSubmit}>Pay Now </Button>
+                            <Button onClick={handleSubmit}>Save Details </Button>
                           </Box>
                         </Stack>
                       </Box>
@@ -233,7 +233,7 @@ const Payment = ({price}) => {
   </Radio>
                           </Box>
                           <Box>
-                            <Button onClick={handleSubmit}>Pay Now </Button>
+                            <Button onClick={handleSubmit}>Save Details </Button>
                           </Box>
                         </Stack>
                       </Box>
@@ -272,7 +272,7 @@ const Payment = ({price}) => {
                           />
                           </Box>
                         <Box>
-                              <Button onClick={handleSubmit}>Pay Now </Button>
+                              <Button onClick={handleSubmit}>Save Details </Button>
                             </Box>
                         </Stack>
                       </Box>
@@ -313,7 +313,7 @@ const Payment = ({price}) => {
 
 
                           <Box> 
-                            <Button onClick={handleSubmit}>Pay Now </Button>
+                            <Button onClick={handleSubmit}>Save Details </Button>
                           </Box>
                         </Stack>
                       </Box>

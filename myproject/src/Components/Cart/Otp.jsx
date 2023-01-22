@@ -51,8 +51,8 @@ const Otp = () => {
       const handledata=()=> {
         if (otp.length === 0){
           toast({
-            title: " Empty ! Plz Enter Otp",
-            status: "success",
+            title: "Empty ! Plz Enter Otp",
+            status: "Error",
             duration: 1000,
             isClosable: true,
           })
@@ -95,7 +95,7 @@ const Otp = () => {
       return (
       <div>
       <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
-      Click Here
+     Pay Now
       </Button>
       <Drawer
            isOpen={isOpen}

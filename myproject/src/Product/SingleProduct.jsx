@@ -186,7 +186,7 @@ const SingleProduct = () => {
               pr="20px"
             >
               <Text> SELECT SIZE</Text>
-              <Text> SIZE CHART</Text>
+            
             </Box>
             <Box display="flex" mt="30px" gap={2}>
               <Box
@@ -296,39 +296,10 @@ const SingleProduct = () => {
                  cursor:"pointer",}}
                  
                 >
-                 Go TO CART->
+                 Go TO CART
                 </button></Link>}
               </Box>
-              <Box mt="10px" justifyContent="space-between" pr={5} display="flex">
-                <Box>
-                  <Text as="b">SIZE CHART</Text>
-                </Box>
-                <Box display="flex" gap={3}>
-                  <Text>centimeter</Text>
-                  <Text>inch</Text>
-                  <Text fontSize="20px" mt="10px" color="white">
-                    ADD TO CART
-                  </Text>
-                </Box>
               
-              {flag == true && (
-                <Link to="/cart">
-                  <Box
-                    h="50px"
-                    w="150%"
-                    bg="orange"
-                    textAlign="center"
-                    border="1px solid #9C3"
-                    borderRadius={10}
-                    cursor="pointer"
-                  >
-                    <Text fontSize="20px" mt="10px" color="white">
-                      GO TO CART
-                    </Text>
-                  </Box>
-                </Link>
-              )}
-            </Box>
             <Box mt="10px" justifyContent="space-between" pr={5} display="flex">
               <Box>
                 <Text as="b">SIZE CHART</Text>

@@ -60,7 +60,7 @@ export default function Searchbar() {
             setfocus(false)
             dispatch(getProducts({q:input}))
             .then(()=>{
-                navigate("/products")
+                navigate("/product")
             })
         }
     }
@@ -70,7 +70,7 @@ export default function Searchbar() {
     const handleclicksuggestion=()=>{
         dispatch(getProducts({q:suggestions[activeoption].trim()}))
         .then(()=>{
-            navigate("/products")
+            navigate("/product")
         })
     }
     return (
