@@ -101,6 +101,7 @@ export default function Signup() {
         setpassword("");
         setmobile("");
         setemail("");
+        navigate("/login");
       } else {
         setisLoading(false);
         toast({

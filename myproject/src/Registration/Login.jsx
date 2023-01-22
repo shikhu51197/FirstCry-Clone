@@ -33,6 +33,7 @@ export default function Login() {
   const submit = async () => {
     let userdata = email;
     dispatch(login(userdata, password, toast, setemail, setpassword));
+    navigate("/");
   };
 
   const style = {

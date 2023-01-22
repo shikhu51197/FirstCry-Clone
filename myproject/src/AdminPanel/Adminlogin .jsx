@@ -20,108 +20,119 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { loginadmin } from '../Redux/AuthReducer/action';
+import { loginadmin } from "../Redux/AuthReducer/action";
 
 const Form1 = () => {
- 
   const toast = useToast();
-  // const navigate=useNavigate();
-  const [Loading,setLoading]=useState(false);
+  const navigate = useNavigate();
+  const [Loading, setLoading] = useState(false);
   const [firstname, SetFirstname] = React.useState("");
   const [lastname, SetLastname] = React.useState("");
   const [adminemail, setAdminEmail] = React.useState("");
   const [adminpassword, setadminpassword] = React.useState("");
- const [show, setShow] = React.useState(false);
+  const [show, setShow] = React.useState(false);
 
-  const validatePassword=(adminpassword)=>{
-    let x=adminpassword.includes('!')||adminpassword.includes('@')||adminpassword.includes('#')||adminpassword.includes('&')||adminpassword.includes('$');
-    let p=adminpassword;
-    if(p==""){
+  const validatePassword = (adminpassword) => {
+    let x =
+      adminpassword.includes("!") ||
+      adminpassword.includes("@") ||
+      adminpassword.includes("#") ||
+      adminpassword.includes("&") ||
+      adminpassword.includes("$");
+    let p = adminpassword;
+    if (p == "") {
       toast({
         title: `password is Empty`,
-        status: 'error',
+        status: "error",
         isClosable: true,
-      })
+      });
     }
-    let y=p.length>=8;
-    let z=p[0]==p[0].toUpperCase();
-    if(x&&y&&z){
+    let y = p.length >= 8;
+    let z = p[0] == p[0].toUpperCase();
+    if (x && y && z) {
       return true;
-    }else{
+    } else {
       return false;
     }
   };
 
-  const validatefirstname=(firstname)=>{
-    return firstname.length<1?false:true
+  const validatefirstname = (firstname) => {
+    return firstname.length < 1 ? false : true;
   };
-  const validateemail=(adminemail)=>{
-    return adminemail.includes("@")?true:false
-  }
- 
-  const validatelastname=(lastname)=>{
-    return lastname.length<1?false:true
+  const validateemail = (adminemail) => {
+    return adminemail.includes("@") ? true : false;
+  };
+
+  const validatelastname = (lastname) => {
+    return lastname.length < 1 ? false : true;
   };
 
   const handleClick = () => setShow(!show);
 
-  const handleSubmit = async() => {
-    const isValidated = validatefirstname(firstname)&& validatelastname(lastname)&& validateemail(adminemail)&&validatePassword(adminpassword)
-     setLoading(true)
+  const handleSubmit = async () => {
+    const isValidated =
+      validatefirstname(firstname) &&
+      validatelastname(lastname) &&
+      validateemail(adminemail) &&
+      validatePassword(adminpassword);
+    setLoading(true);
 
-     if(isValidated){
-      let postdata ={firstname , lastname, adminemail, adminpassword}
-      let res = await fetch('https://burgundy-cow-kit.cyclic.app/Admin');
+    if (isValidated) {
+      let postdata = { firstname, lastname, adminemail, adminpassword };
+      let res = await fetch("https://burgundy-cow-kit.cyclic.app/Admin");
       let userdata = await res.json();
-      let result = false 
-      userdata.forEach((el)=>{
-        if(el.adminemail==adminemail){
+      let result = false;
+      userdata.forEach((el) => {
+        if (el.adminemail == adminemail) {
           result = true;
-          return
-         
-        } 
-        console.log(userdata)
-      })
-      if(result==false){
-        let response=await fetch('https://burgundy-cow-kit.cyclic.app/Admin',{
-        method:'POST',
-        body:JSON.stringify(postdata),
-        headers:{
-          'Content-type':'application/json'
+          return;
         }
-      })
-      console.log(response);
-      setLoading(false)
+        console.log(userdata);
+        // navigate("/admin");
+      });
+      if (result == false) {
+        let response = await fetch(
+          "https://burgundy-cow-kit.cyclic.app/Admin",
+          {
+            method: "POST",
+            body: JSON.stringify(postdata),
+            headers: {
+              "Content-type": "application/json",
+            },
+          }
+        );
+        console.log(response);
+        setLoading(false);
+        toast({
+          title: `Successfully registered`,
+          status: "success",
+          isClosable: true,
+        });
+        SetFirstname("");
+        setadminpassword("");
+        setAdminEmail("");
+        SetLastname("");
+        navigate("/admin");
+      } else {
+        setLoading(false);
+        toast({
+          title: `Email already exists`,
+          status: "error",
+          isClosable: true,
+        });
+      }
+    } else {
+      setLoading(false);
       toast({
-        title: `Successfully registered`,
-        status: 'success',
+        title: `Please enter valid credentials`,
+        status: "error",
         isClosable: true,
       });
-      SetFirstname("")
-      setadminpassword("")
-      setAdminEmail("")
-      SetLastname("")
-     }else{
-      setLoading(false)
-      toast({
-        title: `Email already exists`,
-        status: 'error',
-        isClosable: true,
-      })
     }
- }else{
-  setLoading(false);
-  toast({
-    title: `Please enter valid credentials`,
-    status: 'error',
-    isClosable: true,
-  })
-}
+  };
 
-  }
-    
   return (
     <>
       <Heading w="100%" textAlign={"center"} fontWeight="normal" mb="2%">
@@ -197,62 +208,63 @@ const Form1 = () => {
           </InputRightElement>
         </InputGroup>
         <Box mt={5} align="center">
-        {Loading?
-        <Button
-            w="7rem"
-            colorScheme="red"
-            variant="solid"
-            _hover={{
-                  bg: 'rgb(255,112,67)',
-                }}
-            onClick={handleSubmit}
-          >
-            Submit
-          </Button>
-
-:
-          <Button
-            w="7rem"
-            colorScheme="red"
-            variant="solid"
-            _hover={{
-                  bg: 'rgb(255,112,67)',
-                }}
-            onClick={handleSubmit}
-          >
-            Submit
-          </Button>}
+          {Loading ? (
+            <Button
+              w="7rem"
+              colorScheme="red"
+              variant="solid"
+              _hover={{
+                bg: "rgb(255,112,67)",
+              }}
+              onClick={handleSubmit}
+            >
+              Submit
+            </Button>
+          ) : (
+            <Button
+              w="7rem"
+              colorScheme="red"
+              variant="solid"
+              _hover={{
+                bg: "rgb(255,112,67)",
+              }}
+              onClick={handleSubmit}
+            >
+              Submit
+            </Button>
+          )}
         </Box>
       </FormControl>
     </>
   );
-
-          }
-
-
-
+};
 
 const Form2 = () => {
-   // const navigate = useNavigate();
+  // const navigate = useNavigate();
   const toast = useToast();
   const [adminemail, setAdminEmail] = React.useState("");
   const [adminpassword, setadminpassword] = React.useState("");
- const [show, setShow] = React.useState(false);
-
+  const [show, setShow] = React.useState(false);
 
   const handlelogin = () => setShow(!show);
 
-
-  const dispatch=useDispatch();
-  let isLoading = useSelector((store) =>store.AdminAuthReducer.isLoading)
+  const dispatch = useDispatch();
+  let isLoading = useSelector((store) => store.AdminAuthReducer.isLoading);
 
   const handleSubmit = async () => {
-    console.log('Submit')
-    let userAdmin=adminemail
-    dispatch(loginadmin(userAdmin,adminpassword,toast, setadminpassword ,setAdminEmail ));
+    console.log("Submit");
+    let userAdmin = adminemail;
+    dispatch(
+      loginadmin(
+        userAdmin,
+        adminpassword,
+        toast,
+        setadminpassword,
+        setAdminEmail
+      )
+    );
     // navigate("/admindeshboard")
-  }
-  
+  };
 
   return (
     <>
@@ -263,10 +275,15 @@ const Form2 = () => {
         <FormLabel htmlFor="email" fontWeight={"normal"}>
           Email address
         </FormLabel>
-        <Input id="email" type="email" placeholder="Enter Email"  value={adminemail}
-            onChange={(e) => {
-              setAdminEmail(e.target.value);
-            }} />
+        <Input
+          id="email"
+          type="email"
+          placeholder="Enter Email"
+          value={adminemail}
+          onChange={(e) => {
+            setAdminEmail(e.target.value);
+          }}
+        />
         <FormHelperText align="center">
           We'll never share your email.
         </FormHelperText>
@@ -280,42 +297,41 @@ const Form2 = () => {
           <Input
             pr="4.5rem"
             type={show ? "text" : "password"}
-            placeholder="Enter password"  value={adminpassword}
+            placeholder="Enter password"
+            value={adminpassword}
             onChange={(e) => {
               setadminpassword(e.target.value);
             }}
-           
           />
           <InputRightElement width="4.5rem">
             <Button h="1.75rem" size="sm" onChange={handlelogin}>
-              {show ? "Hide" : "Show"} 
+              {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
         </InputGroup>
 
-
-
         <Box mt={5} align="center">
-        {isLoading?
-          <Button
-          isLoading
-                loadingText="submitting"
-            w="7rem"
-            colorScheme="red"
-            variant="solid"
-            onClick={handleSubmit}
-          >
-            Save 
-          </Button>:
-          <Button
-            w="7rem"
-            colorScheme="red"
-            variant="solid"
-            onClick={handleSubmit}
-          >
-            Save 
-          </Button>
-}
+          {isLoading ? (
+            <Button
+              isLoading
+              loadingText="submitting"
+              w="7rem"
+              colorScheme="red"
+              variant="solid"
+              onClick={handleSubmit}
+            >
+              Save
+            </Button>
+          ) : (
+            <Button
+              w="7rem"
+              colorScheme="red"
+              variant="solid"
+              onClick={handleSubmit}
+            >
+              Save
+            </Button>
+          )}
         </Box>
       </FormControl>
     </>
@@ -403,10 +419,6 @@ function Adminlogin() {
             </AlertDialogBody>
 
             <AlertDialogFooter>
-
-
-            
-           
               <Button
                 onClick={() => onClose()}
                 ml={3}
@@ -416,9 +428,6 @@ function Adminlogin() {
               >
                 Cancel
               </Button>
-
-
-
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialogOverlay>
