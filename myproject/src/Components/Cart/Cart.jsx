@@ -9,6 +9,8 @@ import Shortlistproductcard from "./Shortlistproductcard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { json } from "react-router-dom";
+import Catbar from "../../Navbar/Catbar";
+import FirstNav from "../../Navbar/FristNav";
 
 
 export default function Cart(){
@@ -49,7 +51,7 @@ export default function Cart(){
     }
      return (
       <Box height="auto" backgroundColor="rgb(250,250,250)" >
-        <Navbar />
+        <FirstNav />
         <Box backgroundColor={"rgb(239,238,241)"} display={"flex"} margin="auto" flexDirection={{base:"column",sm:"column",lg:"row"}} width={"60%"} justifyContent="space-between"  ><Showdelivery width="60%" position={"fixed"}  /><Payment price={price} /></Box>
         <Tabs backgroundColor={"white"} variant='enclosed' width={"60%"}  margin={"auto"} >
               <TabList>
