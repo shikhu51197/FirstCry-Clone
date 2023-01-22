@@ -33,6 +33,7 @@ import {FaUserAlt}from "react-icons/fa"
         bg={useColorModeValue('rgb(254,221,0)', 'rgb(254,221,0)')}
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
+      
         borderBottom={0}
         borderStyle={'solid'}
         w="100%"
@@ -76,7 +77,7 @@ import {FaUserAlt}from "react-icons/fa"
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
   
     return (
-      <Stack direction={'row'} spacing={4}>
+      <Stack direction={'row'} spacing={4}   marginLeft={100}>
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -181,6 +182,7 @@ import {FaUserAlt}from "react-icons/fa"
             textDecoration: 'none',
           }}>
           <Text
+         
             fontWeight={600}
             color={useColorModeValue('gray.600', 'gray.200')}>
             {label}
