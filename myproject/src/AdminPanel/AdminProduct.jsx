@@ -17,6 +17,14 @@ import React, { useEffect, useState } from "react";
 
 const AdminProduct = () => {
   const [data, setData] = useState([]);
+  const [noofElements, setnoofElements] = useState(3);
+  const slice = data.slice(0, noofElements);
+  const loadMore = () => {
+    setnoofElements(noofElements + 3);
+  };
+
+
+
   const getOrderData = async (url) => {
     return await axios.get(url);
   };
@@ -42,18 +50,18 @@ const deleteOrder = async (url, id) => {
         .catch((e) => getOrderData());
     };
 
-    const EditOrder = async (url, id) => {
-      return await axios.patch(`${url}/${id}`);
-    };
+    // const EditOrder = async (url, id) => {
+    //   return await axios.patch(`${url}/${id}`);
+    // };
 
 
 
 
-const handleEdit=(id) => {
- EditOrder("https://burgundy-cow-kit.cyclic.app/MenKids", id)
- .then((e) => getOrderData())
-        .catch((e) => getOrderData());
-}
+// const handleEdit=(id) => {
+//  EditOrder("https://burgundy-cow-kit.cyclic.app/MenKids", id)
+//  .then((e) => getOrderData())
+//         .catch((e) => getOrderData());
+// }
 
   return (
     <div>
@@ -86,11 +94,14 @@ const handleEdit=(id) => {
                       <Text color="gray">Totimg:-{el.totimg}</Text>
                       <Text color="gray">Id:-{el.id}</Text>
                       
-                      <Box display="flex"><Button
+                      <Box display="flex" ><Button
                     onClick={() => handleDelete(el.id)}
                     bgColor={"red.500"}
+                    margin="auto"
+                    alignItems="center"
                     _hover={{ bgColor: "red.400" }}
                     color={"whiteAlpha.900"}
+                   
                   w="70px"
                   >
                     Delete
@@ -103,7 +114,19 @@ const handleEdit=(id) => {
                   </GridItem>
                 ))}
             </Grid>
-            
+            <Box align="center" p={10}>
+              <Button
+                onClick={() => loadMore()}
+                _hover={{ bg: "RGBA(0, 0, 0, 0.24)" }}
+                size="lg"
+                h={50}
+                variant="outline"
+                color="black"
+                bg="RGBA(0, 0, 0, 0.04)"
+              >
+                Load more
+              </Button>
+            </Box>
           </Box>
     </div>
   );

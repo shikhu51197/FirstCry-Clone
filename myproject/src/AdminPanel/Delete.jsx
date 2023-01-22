@@ -101,7 +101,7 @@ import {
     };
   
     return (
-      <Box w={"50%"} margin="auto" mr={40} mt={150}>
+      <Box w={"50%"} margin="auto" mr={["20" ,"0" ,"300"]} mt={150}>
         <FormControl mt={30}>
           <FormLabel>Delete Product</FormLabel>
           <Input

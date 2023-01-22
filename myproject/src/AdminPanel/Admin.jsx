@@ -9,18 +9,25 @@ import {
   Box,
   
 } from "@chakra-ui/react";
+import Deshboard from './Deshboard';
+import OrderManagement from './OrderManagement';
+import UserManagement from './UserManagement';
 
 
 const Admin = () => {
-  const [showPage , setShowPage] = useState("AdminProduct")
+  const [showPage , setShowPage] = useState("Deshboard")
   return (
     <div>
        <AdminNavbar setShowPage={setShowPage}/>
        <Box>
         <Box>
-          <AdminSide/>
+          <AdminSide setShowPage={setShowPage}/>
         </Box>
         <Box>
+        {showPage == "Deshboard" ? <Deshboard /> : null}
+        {showPage == "OrderManagement" ? <OrderManagement/> : null}
+        {showPage == "UserManagement" ? <UserManagement/> : null}
+     
         {showPage == "AdminProduct" ? <AdminProduct /> : null}
         {showPage == "Delivery" ? <Delivery /> : null}
         {showPage == "Delete" ? <Delete/> : null}

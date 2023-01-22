@@ -1,5 +1,5 @@
 import React from "react";
-
+import Searchbar from '../AdminPanel/AdminSearch';
 import {
   Box,
   Button,
@@ -206,6 +206,14 @@ const AdminNavbar = ({ setShowPage }) => {
                   w="full"
                   variant="ghost"
                   colorScheme="blue"
+                onClick={() => setShowPage("AdminProduct")}
+              >
+                Show Product
+              </Button>
+                <Button
+                  w="full"
+                  variant="ghost"
+                  colorScheme="blue"
                   leftIcon={<AiOutlineInbox />}
                   onClick={() => setShowPage("Delivery")}
                 >
@@ -214,6 +222,7 @@ const AdminNavbar = ({ setShowPage }) => {
                 <Button
                   w="full"
                   variant="ghost"
+                  colorScheme="blue"
                   onClick={() => setShowPage("Delete")}
                 >
                   Delete
@@ -222,7 +231,7 @@ const AdminNavbar = ({ setShowPage }) => {
             </Box>
             <chakra.a
               href="/"
-              title="Choc Home Page"
+              // title="Choc Home Page"
               display="flex"
               alignItems="center"
             ></chakra.a>
@@ -246,9 +255,17 @@ const AdminNavbar = ({ setShowPage }) => {
                 variant="solid"
                 colorScheme="blue"
                 size="sm"
+                onClick={() => setShowPage("AdminProduct")}
+              >
+                Show Product
+              </Button>
+              <Button
+                variant="solid"
+                colorScheme="blue"
+                size="sm"
                 onClick={() => setShowPage("Delivery")}
               >
-                Order Management
+                Address Details
               </Button>
               <Button
                 variant="ghost"
@@ -373,12 +390,8 @@ const AdminNavbar = ({ setShowPage }) => {
             display={mobileNav.isOpen ? "none" : "flex"}
             alignItems="center"
           >
-            <InputGroup>
-              <InputLeftElement pointerEvents="none">
-                <FcSearch />
-              </InputLeftElement>
-              <Input type="tel" placeholder="Search..." />
-            </InputGroup>
+          <Searchbar />
+       
 
             <chakra.a
               p={3}

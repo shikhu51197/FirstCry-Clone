@@ -9,7 +9,7 @@ import {CiHeart} from "react-icons/ci"
 import {CiLocationOn} from "react-icons/ci"
 import Searchbar from '../Components/Searchbar';
 import { Link } from 'react-router-dom';
-import Adminlogin from '../AdminPanel/Adminlogin ';
+import Adminlogin from '../AdminPanel/Adminlogin';
 function FristNav() {
 //    https://cdn.fcglcdn.com/brainbees/images/n/fc_logo.png
    let searchRef = useRef();
@@ -36,10 +36,10 @@ function FristNav() {
                  <p>My Account |</p>
                  </Link>
                   
-                 <Adminlogin/>
+                 <Adminlogin/> |
                
-                  <Icon className="IC" mt={1} fontSize="20px"><CiHeart/></Icon>
-    <p  style={{cursor:"pointer"}}> shortList |</p>
+                  {/* <Icon className="IC" mt={1} fontSize="20px"><CiHeart/></Icon>
+    <p  style={{cursor:"pointer"}}> shortList |</p> */}
    
                <Link to={"/login"} >
                    <p  style={{cursor:"pointer"}}>Login /Register | </p>       
