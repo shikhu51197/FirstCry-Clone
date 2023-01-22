@@ -8,14 +8,12 @@ import {
   Box,
   Divider,
 } from "@chakra-ui/react";
-import FilterComp from './FilterComp';
+import FilterComp from "./FilterComp";
 
-import ProductList from './ProductList';
+import ProductList from "./ProductList";
 const products = () => {
   return (
     <Box w="95%" m="auto" mt="10px">
-      <h1>Products Page</h1>
-
       <Breadcrumb>
         <BreadcrumbItem>
           <BreadcrumbLink as={Link} to="/">
@@ -45,12 +43,11 @@ const products = () => {
           border="1px"
           borderColor="gray.200"
         >
-          <ProductList/>
+          <ProductList />
         </Box>
       </Box>
     </Box>
   );
 };
-  
 
 export default products;
