@@ -18,9 +18,9 @@ export default function Searchbar() {
   const getdata=()=>{
        axios.get(`https://burgundy-cow-kit.cyclic.app/MenKids`)
     .then((res)=>setdata([...data,...res.data]))
-    axios.get(`https://burgundy-cow-kit.cyclic.app//GirlKids `)
+    axios.get(`https://burgundy-cow-kit.cyclic.app/GirlKids`)
     .then((res)=>setdata([...data,...res.data]))
-    axios.get(`https://burgundy-cow-kit.cyclic.app///Footwear  `)
+    axios.get(`https://burgundy-cow-kit.cyclic.app/Footwear`)
     .then((res)=>setdata([...data,...res.data]))
   }
   useEffect(()=>{
@@ -112,6 +112,10 @@ border-radius: 0% 0% 5% 5%;
 back-ground-color:white;
 font-size: 12px;
 width:300px;
+display: block;
+position:absolute;
+z-index:10;
+background:white;
 max-height: auto;
 overflow:auto;
 & * {
