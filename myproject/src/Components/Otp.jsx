@@ -52,7 +52,7 @@ const Otp = () => {
         if (otp.length === 0){
           toast({
             title: "Empty ! Plz Enter Otp",
-            status: "Error",
+            status: "error",
             duration: 1000,
             isClosable: true,
           })
