@@ -114,7 +114,7 @@ const Form1 = () => {
         setadminpassword("");
         setAdminEmail("");
         SetLastname("");
-        navigate("/admin");
+        // navigate("/admin");
       } else {
         setLoading(false);
         toast({

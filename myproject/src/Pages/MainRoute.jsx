@@ -5,7 +5,7 @@ import UserManagement from "../AdminPanel/UserManagement";
 import Deshboard from "./../AdminPanel/Deshboard";
 import OrderManagement from "./../AdminPanel/OrderManagement";
 import Admin from "../AdminPanel/Admin";
-import Adminlogin from "../AdminPanel/Adminlogin ";
+import Adminlogin from "../AdminPanel/Adminlogin";
 import Cart from "../Components/Cart";
 import Home from "../HomePage/Home";
 import MyAccountPages from "../MyAccountPages/MyAccountPages";
@@ -39,9 +39,8 @@ const MainRoute = () => {
           }
         />
         <Route path="/product" element={<Products />} />
-        <Route path="/adminlogin" element={<Adminlogin />} />
+        <Route path="/adminlogin" element={<Adminlogin/>}/>
         <Route path="/admin" element={<Admin />} />
-
         <Route path="/deshboard" element={<Deshboard />} />
         <Route path="/usermanagement" element={<UserManagement />} />
         <Route path="/ordermanagement" element={<OrderManagement />} />
