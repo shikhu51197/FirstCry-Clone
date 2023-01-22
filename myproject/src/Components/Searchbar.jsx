@@ -34,7 +34,7 @@ export default function Searchbar() {
         let newsuggestions=data.filter((item)=>{
           return item.title.toLowerCase().indexOf(textquery)!==-1?true:false;
         }).map((item)=>item.title)
-        setsuggestions(newsuggestions.slice(0,5));
+        setsuggestions(newsuggestions.slice(0,7));
       }
   },[input])
   const [activeoption,setactiveoption]=useState(1);
