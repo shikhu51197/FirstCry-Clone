@@ -32,6 +32,7 @@ import {
 
 import { getProducts } from "../Redux/AppReducer/action";
 import axios from "axios";
+import { Button } from "bootstrap";
   const SingleProduct = () => {
     const { id } = useParams();
    
@@ -279,17 +280,18 @@ import axios from "axios";
                 >
                   <Text fontSize='20px' mt="10px" color="white">ADD TO CART</Text>
                 </Box>}
-                {flag==true&&<Link><Box
-                  h="50px"
-                  w="150%"
-                  bg="orange"
-                  textAlign="center"
-                  border="1px solid #9C3"
-                  borderRadius={10}
-                  cursor="pointer"
+                {flag==true&&<Link to="/cart"><button
+                 style={{height:"50px",
+                 width:"150%",
+                 backgroundColor:"orange",
+                 textAlign:"center",
+                 border:"1px solid #9C3",
+                 borderRadius:"10px",
+                 cursor:"pointer",}}
+                 
                 >
-                  <Text fontSize='20px' mt="10px" color="white">Go TO CART-></Text>
-                </Box></Link>}
+                 Go TO CART->
+                </button></Link>}
               </Box>
               <Box mt="10px" justifyContent="space-between" pr={5} display="flex">
                 <Box>
