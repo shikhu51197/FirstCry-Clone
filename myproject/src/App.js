@@ -9,6 +9,7 @@ import "./App.css";
 // import MyAccount from './MyAccount/MyAccount';
 // import Products from "./Product/Products";
 import Home from "./HomePage/Home";
+import MainRoute from "./Pages/MainRoute";
 
 function App() {
   return (
@@ -20,13 +21,13 @@ function App() {
       <Carousels /> */}
 
       {/* <Adminlogin />
- 
-
-      <Login />
+  {/* <Products /> */}
+  <MainRoute/>
+      {/* <Login />
       <Cart />
-       <MyAccount/>  */}
-          <Home/>
-      {/* <Products /> */}
+       <MyAccount/>  
+          <Home/> */}
+     
     </div>
   );
 }

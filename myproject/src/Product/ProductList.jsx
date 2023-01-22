@@ -11,6 +11,7 @@ import {
   Button,
   GridItem,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 const ProductList = ({ products }) => {
   console.log("products - - - > ", products);
   return (
@@ -59,12 +60,17 @@ const ProductList = ({ products }) => {
         // spacing="20px"
       >
         {   products&& products.length>0 && products.map((el) => (
-          <Box m="auto" key={el.id}>
+          <Box>
+          <Link to={`/singleproduct/${el.id}`}>
+          <Box m="auto"  >
             <Image w="300px" m="auto" src={el.image} alt="" />
             <Text fontWeight="bold">{el.name}</Text>
             <Text fontWeight="light">{el.category.split("_")}</Text>
             <Text>₹{el.price}</Text>
+           
             
+          </Box>
+          </Link>
           </Box>
         ))}
       </SimpleGrid>
