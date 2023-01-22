@@ -10,7 +10,7 @@ import {
   Button,
   Text,
   useColorModeValue,
-  // Link,
+  Center,
   Image,
   useToast,
 } from "@chakra-ui/react";
@@ -69,9 +69,12 @@ export default function Login() {
             margin="auto"
             onClick={() => navigate("/")}
           />
-          <Text textAlign={"left"} fontStyle={"italic"} fontWeight={"bold"}>
-            Login here
-          </Text>
+          <Center>
+            <Text textAlign={"left"} fontStyle={"italic"} fontWeight={"bold"}>
+              Login here
+            </Text>
+          </Center>
+
           <Box rounded={"lg"} bg={useColorModeValue("white")} p={6}>
             <Stack
               spacing={2}

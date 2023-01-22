@@ -13,6 +13,7 @@ import {
   useColorModeValue,
   Image,
   useToast,
+  Center,
 } from "@chakra-ui/react";
 import { useContext, useRef, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
@@ -153,16 +154,19 @@ export default function Signup() {
             margin="auto"
             onClick={() => navigate("/")}
           />
-          <Text textAlign={"left"} fontStyle={"italic"} fontWeight={"bold"}>
-            Register here
-          </Text>
+          <Center>
+            <Text textAlign={"left"} fontStyle={"italic"} fontWeight={"bold"}>
+              Register here
+            </Text>
+          </Center>
+
           <Box rounded={"lg"} bg={useColorModeValue("white")} p={6}>
             <Stack
               spacing={0}
               width={{ sm: "200px", md: "300px", lg: "300px" }}
             >
               <HStack>
-                <Box>
+                <Box className="w-100">
                   <FormControl id="name" isRequired>
                     <FormLabel>Full Name</FormLabel>
                     <Input
@@ -178,7 +182,7 @@ export default function Signup() {
                 </Box>
               </HStack>
               <HStack>
-                <Box>
+                <Box className="w-100">
                   <FormControl id="mobile" isRequired>
                     <FormLabel>Mobile Number</FormLabel>
                     <div style={{ display: "flex" }}>
