@@ -9,7 +9,7 @@ function Home() {
     <div>
        <FristNav />
       <Catbar />
-      <Carousels />
+      <Carousels/>
       <Main/>
       <Footer/>
     </div>
