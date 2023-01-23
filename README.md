@@ -1,7 +1,7 @@
  💻Clone Project Name -  ![App Screenshot](https://cdn.fcglcdn.com/brainbees/images/n/fc_logo.png)
 ---
 
-Largest Online Baby and Kids Store, is India's largest online shop for new mom and baby products, offering top of the line discounts on renowned national & International brands.This is a collaborative Project from Masai School in the Construct Week With the 5 team members .
+Largest Online Baby and Kids Store, is India's largest online shop for new mom and baby products, offering top of the line discounts on renowned national & International brands.This is a collaborative Project from Masai School in the Construct Week With the 5 team members within 5 Days.
 ---
 ✨Collaboraters Names Are:-
 
