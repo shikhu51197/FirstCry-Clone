@@ -2,7 +2,7 @@
 ---
 
 Largest Online Baby and Kids Store, is India's largest online shop for new mom and baby products, offering top of the line discounts on renowned national & International brands.This is a collaborative Project from Masai School in the Construct Week With the 5 team members .
-
+---
 ✨Collaboraters Names Are:-
 
 1. Shikha Gupta- Team Lead
@@ -79,14 +79,16 @@ For Styling :- BootStrap , Chakra UI (UI Styling Library)
 
 ![App Screenshot](https://imgur.com/KioSyP8.png)
 ![App Screenshot](https://imgur.com/0U74soW.png)
+
 ---
+# Admin Deshboard
 ![App Screenshot](https://imgur.com/gAX33KJ.png)
 ![App Screenshot](https://imgur.com/FrdZlzX.png)
 ![App Screenshot](https://imgur.com/yOR2Rb0.png)
 
 ![App Screenshot](https://imgur.com/gR1DfAS.png)
 ![App Screenshot](https://imgur.com/kDMvVLY.png)
-![App Screenshot](https://imgur.com/a/Lmwofuz.png)
+![App Screenshot](https://imgur.com/y7yi0uE.png)
 ---
 ⭐Deployed Link:-https://kidsshop-kidsfashion.netlify.app/
 
