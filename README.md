@@ -12,18 +12,14 @@ Largest Online Baby and Kids Store, is India's largest online shop for new mom a
 5. Rohit kumar Yadav 
 <br>
 
-💻Unique Project Name & 💻Project logo :- Kids Shop - kids fashion
+💻Unique Project Name & logo :- Kids Shop - kids fashion
 
 ![App Screenshot](https://imgur.com/khv5qxh.png)
-
 ---
-
  💫Tech-Stack->
 For Frontend : HTML5, CSS3, Javascript, ES6, ReactJS Redux.
 For database: Json Server (cyclic). 
 For Styling :- BootStrap , Chakra UI (UI Styling Library)
-
----
 
 ![ShopGIF](https://user-images.githubusercontent.com/107506646/212536696-9a20e11e-85cb-44f8-bd54-6541856b8348.gif)
 ---
