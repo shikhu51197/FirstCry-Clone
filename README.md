@@ -1,6 +1,5 @@
-# tender-example-8348
-
-💻Project Name - Firstcry ->
+# tender-example-8348 💻Project Name - Firstcry  ![App Screenshot](https://cdn.fcglcdn.com/brainbees/images/n/fc_logo.png)
+---
 
 Largest Online Baby and Kids Store, is India's largest online shop for new mom and baby products, offering top of the line discounts on renowned national & International brands.
 
@@ -14,12 +13,13 @@ Largest Online Baby and Kids Store, is India's largest online shop for new mom a
 💻Project logo : -
 
 ![App Screenshot](https://imgur.com/khv5qxh.png)
+
 ---
 💫Tech-Stack->
 For Frontend : HTML5, CSS3, Javascript, ES6, ReactJS Redux.
-
 For database: Json Server (cyclic). 
 For Styling :- BootStrap , Chakra UI (UI Styling Library)
+
 ---
 ✨Collaboraters Names Are:-
 
