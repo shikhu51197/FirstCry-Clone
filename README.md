@@ -85,9 +85,6 @@ For Styling :- BootStrap , Chakra UI (UI Styling Library)
 ![App Screenshot](https://imgur.com/gAX33KJ.png)
 ![App Screenshot](https://imgur.com/FrdZlzX.png)
 ![App Screenshot](https://imgur.com/yOR2Rb0.png)
-
-![App Screenshot](https://imgur.com/gR1DfAS.png)
-![App Screenshot](https://imgur.com/kDMvVLY.png)
 ![App Screenshot](https://imgur.com/y7yi0uE.png)
 ---
 ⭐Deployed Link:-https://kidsshop-kidsfashion.netlify.app/
