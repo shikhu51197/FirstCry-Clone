@@ -39,7 +39,7 @@ For Styling :- BootStrap , Chakra UI (UI Styling Library)
 
 - Sign Up , Login 
 
-- Admin Authentication & Deshboard
+- Admin Authentication & Dashboard
 
 ---
 ## Screenshots 📷
@@ -81,7 +81,7 @@ For Styling :- BootStrap , Chakra UI (UI Styling Library)
 ![App Screenshot](https://imgur.com/0U74soW.png)
 
 ---
-# Admin Deshboard
+# Admin Dashboard
 ![App Screenshot](https://imgur.com/gAX33KJ.png)
 ![App Screenshot](https://imgur.com/FrdZlzX.png)
 ![App Screenshot](https://imgur.com/yOR2Rb0.png)
