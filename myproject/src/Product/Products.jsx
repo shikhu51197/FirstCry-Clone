@@ -25,9 +25,6 @@ const products = () => {
             Products
           </BreadcrumbLink>
         </BreadcrumbItem>
-        {/* <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink>Contact</BreadcrumbLink>
-        </BreadcrumbItem> */}
       </Breadcrumb>
       <Divider h="4" />
       <Box display={{ base: "grid", md: "grid", lg: "flex" }}>
