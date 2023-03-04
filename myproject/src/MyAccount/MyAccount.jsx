@@ -5,7 +5,6 @@ import { deleteUser, loadUsers } from "../Redux/MyAccount/action";
 const MyAccount = () => {
   let dispatch = useDispatch();
   const UserData = useSelector((state) => state.MyAccount.UserData);
-  console.log("UserData", UserData);
   const [userChild, setUserChild] = useState({
     childName: "",
     childDob: "",

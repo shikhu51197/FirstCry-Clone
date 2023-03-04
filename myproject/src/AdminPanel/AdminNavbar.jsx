@@ -1,5 +1,5 @@
 import React from "react";
-import Searchbar from '../AdminPanel/AdminSearch';
+import Searchbar from "../AdminPanel/AdminSearch";
 import {
   Box,
   Button,
@@ -38,7 +38,6 @@ import {
 import img from "../assest/Kids fashion logo.png";
 import { useState } from "react";
 import axios from "axios";
-// import { useEffect } from "react";
 
 const AdminNavbar = ({ setShowPage }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -103,36 +102,6 @@ const AdminNavbar = ({ setShowPage }) => {
         )
         .catch(() => setForm(intProductData));
     }
-    // {
-    //   postProductData("https://burgundy-cow-kit.cyclic.app/GirlKids", form)
-    //     .then(
-    //       () => (
-    //         setForm(intProductData),
-    //         toast({
-    //           title: "Product Added.",
-    //           status: "success",
-    //           duration: 9000,
-    //           isClosable: true,
-    //         })
-    //       )
-    //     )
-    //     .catch(() => setForm(intProductData));
-    // }
-    // {
-    //   postProductData("https://burgundy-cow-kit.cyclic.app/Footwear", form)
-    //     .then(
-    //       () => (
-    //         setForm(intProductData),
-    //         toast({
-    //           title: "Product Added.",
-    //           status: "success",
-    //           duration: 9000,
-    //           isClosable: true,
-    //         })
-    //       )
-    //     )
-    //     .catch(() => setForm(intProductData));
-    // }
   };
 
   return (
@@ -206,10 +175,10 @@ const AdminNavbar = ({ setShowPage }) => {
                   w="full"
                   variant="ghost"
                   colorScheme="blue"
-                onClick={() => setShowPage("AdminProduct")}
-              >
-                Show Product
-              </Button>
+                  onClick={() => setShowPage("AdminProduct")}
+                >
+                  Show Product
+                </Button>
                 <Button
                   w="full"
                   variant="ghost"
@@ -229,12 +198,7 @@ const AdminNavbar = ({ setShowPage }) => {
                 </Button>
               </VStack>
             </Box>
-            <chakra.a
-              href="/"
-              // title="Choc Home Page"
-              display="flex"
-              alignItems="center"
-            ></chakra.a>
+            <chakra.a href="/" display="flex" alignItems="center"></chakra.a>
 
             <HStack
               spacing={3}
@@ -390,8 +354,7 @@ const AdminNavbar = ({ setShowPage }) => {
             display={mobileNav.isOpen ? "none" : "flex"}
             alignItems="center"
           >
-          <Searchbar />
-       
+            <Searchbar />
 
             <chakra.a
               p={3}

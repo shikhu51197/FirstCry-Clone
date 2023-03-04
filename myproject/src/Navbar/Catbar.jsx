@@ -36,7 +36,6 @@ const Catbar = () => {
         borderBottom={0}
         borderStyle={"solid"}
         w="100%"
-        // border={"2px solid "}
         align={"center"}
       >
         <Flex flex={{ base: 1, md: "auto" }} display={mds ? "none" : "flex"}>

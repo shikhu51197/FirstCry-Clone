@@ -89,8 +89,6 @@ export default function Signup() {
             },
           }
         );
-        // let data=await response.json();
-        console.log(response);
         setisLoading(false);
         toast({
           title: `Successfully registered`,

@@ -34,11 +34,9 @@ import { getProducts } from "../Redux/AppReducer/action";
 import axios from "axios";
 import { Button } from "bootstrap";
 
-    
-   
 const SingleProduct = () => {
   const { id } = useParams();
-   
+
   const [flag, setflag] = useState(false);
   const products = useSelector((state) => state.AppReducer.products);
   const [currentProduct, setCurrentProduct] = useState({});
@@ -67,7 +65,6 @@ const SingleProduct = () => {
       .then((res) => {
         res = res.data;
         res = { ...res, quantity: 1 };
-        console.log(res);
         let LSdata = JSON.parse(localStorage.getItem("cartdata")) || [];
         localStorage.setItem("cartdata", JSON.stringify([...LSdata, res]));
         toast({
@@ -186,7 +183,6 @@ const SingleProduct = () => {
               pr="20px"
             >
               <Text> SELECT SIZE</Text>
-            
             </Box>
             <Box display="flex" mt="30px" gap={2}>
               <Box
@@ -273,7 +269,7 @@ const SingleProduct = () => {
                   </Box>
                 </Box>
               </Box>
-              {flag == false && 
+              {flag == false && (
                 <Box
                   onClick={() => handleClick()}
                   h="50px"
@@ -284,22 +280,30 @@ const SingleProduct = () => {
                   borderRadius={10}
                   cursor="pointer"
                 >
-                  <Text fontSize='20px' mt="10px" color="white">ADD TO CART</Text>
-                </Box>}
-                {flag==true&&<Link to="/cart"><button
-                 style={{height:"50px",
-                 width:"150%",
-                 backgroundColor:"orange",
-                 textAlign:"center",
-                 border:"1px solid #9C3",
-                 borderRadius:"10px",
-                 cursor:"pointer",}}
-                 
-                >
-                 Go TO CART
-                </button></Link>}
-              </Box>
-              
+                  <Text fontSize="20px" mt="10px" color="white">
+                    ADD TO CART
+                  </Text>
+                </Box>
+              )}
+              {flag == true && (
+                <Link to="/cart">
+                  <button
+                    style={{
+                      height: "50px",
+                      width: "150%",
+                      backgroundColor: "orange",
+                      textAlign: "center",
+                      border: "1px solid #9C3",
+                      borderRadius: "10px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Go TO CART
+                  </button>
+                </Link>
+              )}
+            </Box>
+
             <Box mt="10px" justifyContent="space-between" pr={5} display="flex">
               <Box>
                 <Text as="b">SIZE CHART</Text>

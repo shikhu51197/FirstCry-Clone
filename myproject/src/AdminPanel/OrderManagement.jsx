@@ -43,7 +43,6 @@ const OrderManagement = () => {
       }, [data.length]);
     
 
-      console.log(data);
  const handleDelete = (id) => {
       deleteOrder("https://burgundy-cow-kit.cyclic.app/Admin", id)
         .then((e) => getOrderData())

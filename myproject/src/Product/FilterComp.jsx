@@ -3,10 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import {
- 
-  Box,Heading
-} from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 
 const FilterComp = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -14,8 +11,6 @@ const FilterComp = () => {
   const [category, setCategory] = useState(initialState || []);
   const initialOrder = searchParams.getAll("order");
   const [order, setOrder] = useState(initialOrder || "");
-
-  // console.log(category)
 
   const handlefilter = (e) => {
     let newCategory = [...category];
@@ -35,7 +30,6 @@ const FilterComp = () => {
     order && (params.order = order);
 
     setSearchParams(params);
-    // console.log(params)
   }, [category, order]);
 
   const handlesort = (e) => {
@@ -44,7 +38,6 @@ const FilterComp = () => {
 
   return (
     <Box ml="8px">
-      
       <Heading>Filter</Heading>
       <Box mt="8px">
         <input
@@ -92,9 +85,7 @@ const FilterComp = () => {
           defaultChecked={order === "desc"}
         />
         <label>Ascending order</label>
-<br>
-  
-</br>
+        <br></br>
         <input
           type="radio"
           name="sort_by"

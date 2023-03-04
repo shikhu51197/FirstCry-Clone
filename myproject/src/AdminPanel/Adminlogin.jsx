@@ -89,8 +89,6 @@ const Form1 = () => {
           result = true;
           return;
         }
-        console.log(userdata);
-        // navigate("/admin");
       });
       if (result == false) {
         let response = await fetch(
@@ -103,7 +101,6 @@ const Form1 = () => {
             },
           }
         );
-        console.log(response);
         setLoading(false);
         toast({
           title: `Successfully registered`,
@@ -114,7 +111,6 @@ const Form1 = () => {
         setadminpassword("");
         setAdminEmail("");
         SetLastname("");
-        // navigate("/admin");
       } else {
         setLoading(false);
         toast({
@@ -252,7 +248,6 @@ const Form2 = () => {
   let isLoading = useSelector((store) => store.AdminAuthReducer.isLoading);
 
   const handleSubmit = async () => {
-    console.log("Submit");
     let userAdmin = adminemail;
     dispatch(
       loginadmin(
@@ -263,7 +258,7 @@ const Form2 = () => {
         setAdminEmail
       )
     );
-    navigate("/admin")
+    navigate("/admin");
   };
 
   return (
@@ -339,7 +334,6 @@ const Form2 = () => {
 };
 
 function Adminlogin() {
-  // const navigate = useNavigate();
   const toast = useToast();
   const [step, setStep] = useState(1);
   const [progress, setProgress] = useState(33.33);

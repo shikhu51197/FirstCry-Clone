@@ -13,7 +13,6 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Input,
-  
   Tooltip,
   Select,
 } from "@chakra-ui/react";
@@ -30,7 +29,7 @@ export const Showdelivery = () => {
     flat: "",
     area: "",
     landmark: "",
-    loaction:""
+    loaction: "",
   };
 
   const [formData, setFormData] = useState(intData);
@@ -83,8 +82,6 @@ export const Showdelivery = () => {
                     name="name"
                     placeholder="Full Name*"
                     variant="flushed"
-                    // value={formData.name}
-                    // onChange={(e)=>setFormData({type:"name" ,payload:e.target.value})}
                     onChange={handleChange}
                   />
                 </Tooltip>
@@ -106,8 +103,6 @@ export const Showdelivery = () => {
                       variant="flushed"
                       maxLength="10"
                       onChange={handleChange}
-                      //   value={formData.mobile}
-                      //   onChange={(e)=>setFormData({type:"mobile" ,payload:e.target.value})}
                     />
                   </Tooltip>
                 </Box>
@@ -122,12 +117,10 @@ export const Showdelivery = () => {
                     <Input
                       type="number"
                       name="alternumber"
-                      maxLength='10'
+                      maxLength="10"
                       placeholder="+91- Alternate No"
                       variant="flushed"
                       onChange={handleChange}
-                      //   value={formData.alternumber}
-                      //   onChange={(e)=>setFormData({type:"alternumber" ,payload:e.target.value})}
                     />
                   </Tooltip>
                 </Box>
@@ -144,13 +137,10 @@ export const Showdelivery = () => {
                     <Input
                       mt={5}
                       type="number"
-                      
                       name="pincode"
-                      maxLength='6'
+                      maxLength="6"
                       placeholder="Pincode*"
                       variant="flushed"
-                      //   value={formData.pincode}
-                      //   onChange={(e)=>setFormData({type:"pincode" ,payload:e.target.value})}
                       onChange={handleChange}
                     />
                   </Tooltip>
@@ -169,8 +159,6 @@ export const Showdelivery = () => {
                       placeholder="City*"
                       variant="flushed"
                       onChange={handleChange}
-                      //   value={formData.city}
-                      //   onChange={(e)=>setFormData({type:"city" ,payload:e.target.value})}
                     />
                   </Tooltip>
                 </Box>
@@ -189,8 +177,6 @@ export const Showdelivery = () => {
                     placeholder="State*"
                     variant="flushed"
                     onChange={handleChange}
-                    // value={formData.state}
-                    // onChange={(e)=>setFormData({type:"state" ,payload:e.target.value})}
                   />
                 </Tooltip>
               </Box>
@@ -208,8 +194,6 @@ export const Showdelivery = () => {
                     placeholder="Flat/House No./Building*"
                     variant="flushed"
                     onChange={handleChange}
-                    // value={formData.flat}
-                    // onChange={(e)=>setFormData({type:"flat" ,payload:e.target.value})}
                   />
                 </Tooltip>
               </Box>
@@ -227,8 +211,6 @@ export const Showdelivery = () => {
                     placeholder="Area/Locality*"
                     variant="flushed"
                     onChange={handleChange}
-                    // value={formData.area}
-                    // onChange={(e)=>setFormData({type:"area" ,payload:e.target.value})}
                   />
                 </Tooltip>
               </Box>
@@ -246,21 +228,21 @@ export const Showdelivery = () => {
                     placeholder="Landmark(optional)"
                     variant="flushed"
                     onChange={handleChange}
-                    // value={formData.landmark}
-                    // onChange={(e)=>setFormData({type:"landmark" , payload:e.target.value})}
                   />
                 </Tooltip>
-
-
               </Box>
 
               <Box>
-              <Select  mt={5}  name ="location"   onChange={handleChange} placeholder="Select Location" >
-                <option  value="home">Home</option>
-                <option value="office">Office</option>
-              </Select>
-            </Box>
-             
+                <Select
+                  mt={5}
+                  name="location"
+                  onChange={handleChange}
+                  placeholder="Select Location"
+                >
+                  <option value="home">Home</option>
+                  <option value="office">Office</option>
+                </Select>
+              </Box>
 
               {formData.name.length === 0 ||
               formData.alternumber.length === 0 ||
@@ -271,14 +253,11 @@ export const Showdelivery = () => {
               formData.flat.length === 0 ||
               formData.area.length === 0 ||
               formData.landmark.length === 0 ||
-              formData.location.length === 0? (
+              formData.location.length === 0 ? (
                 <Box fontSize={12} color={"red"}>
                   Fill All the Crediantial correctly
                 </Box>
               ) : null}
-
-
-            
             </FormControl>
           </DrawerBody>
 
@@ -294,8 +273,6 @@ export const Showdelivery = () => {
             >
               CANCEL
             </Button>
-
-           
 
             <SaveButton formData={formData} />
           </DrawerFooter>

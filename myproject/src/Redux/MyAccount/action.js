@@ -15,7 +15,6 @@ export const loadUsers = () => {
     axios
       .get("https://burgundy-cow-kit.cyclic.app/UserDetails")
       .then((res) => {
-        console.log("res", res.data);
         dispatch(getUsers(res.data));
       })
       .catch((err) => console.log(err));
@@ -27,7 +26,6 @@ export const deleteUser = (id) => {
     axios
       .delete(`https://burgundy-cow-kit.cyclic.app/UserDetails/${id}`)
       .then((res) => {
-        console.log("res", res.data);
         dispatch(userDeleted());
       })
       .catch((err) => console.log(err));

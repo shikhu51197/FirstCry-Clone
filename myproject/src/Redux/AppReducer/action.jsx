@@ -12,18 +12,19 @@ const getProductsError = () => {
   return { type: types.GET_PRODUCTS_ERROR };
 };
 
-const getProducts = (params={}) =>(dispatch) => {
-  console.log("invoked");
-  dispatch(getProductsRequest);
-  return axios
-    .get(`https://burgundy-cow-kit.cyclic.app/MenKids`,params)
-    .then((r) => {
-      dispatch(getProductsSuccess(r.data));
-    })
-    .catch((e) => {
-      dispatch(getProductsError);
-    });
-};
+const getProducts =
+  (params = {}) =>
+  (dispatch) => {
+    dispatch(getProductsRequest);
+    return axios
+      .get(`https://burgundy-cow-kit.cyclic.app/MenKids`, params)
+      .then((r) => {
+        dispatch(getProductsSuccess(r.data));
+      })
+      .catch((e) => {
+        dispatch(getProductsError);
+      });
+  };
 
 export {
   getProductsError,

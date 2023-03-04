@@ -27,7 +27,6 @@ export default function Login() {
   const [password, setpassword] = useState("");
   const toast = useToast();
   const navigate = useNavigate();
-  // const location=useLocation();
   const dispatch = useDispatch();
   let isLoading = useSelector((store) => store.Authentication.isLoading);
   const submit = async () => {
