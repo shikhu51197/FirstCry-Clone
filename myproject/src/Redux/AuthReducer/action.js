@@ -22,7 +22,6 @@ let details;
 export const loginadmin =
   (adminemail, adminpassword, toast, setadminpassword, setAdminEmail) =>
   (dispatch) => {
-    // const toast = useToast()
     dispatch(loginRequest());
     return axios
       .get(`https://burgundy-cow-kit.cyclic.app/Admin?adminemail=${adminemail}`)

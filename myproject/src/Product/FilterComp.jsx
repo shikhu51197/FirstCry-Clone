@@ -66,16 +66,6 @@ const FilterComp = () => {
         />
         <label>Footwear</label>
       </Box>
-      {/* <div>
-        <input
-          checked={category.includes("Footwear")}
-          type="checkbox"
-          value="Footwear"
-          onChange={handlefilter}
-        />
-        <label>Footwear</label>
-      </div> */}
-
       <Heading>Sorting</Heading>
       <div onChange={handlesort}>
         <input
